@@ -21,9 +21,9 @@ class Ui_Input(object):
         self.lineEdit.setAlignment(QtCore.Qt.AlignCenter)
         self.lineEdit.setReadOnly(True)
         self.lineEdit.setObjectName("lineEdit")
-        self.comboBox = QtWidgets.QComboBox(Input)
-        self.comboBox.setGeometry(QtCore.QRect(80, 40, 191, 22))
-        self.comboBox.setObjectName("comboBox")
+        self.signalComboBox = QtWidgets.QComboBox(Input)
+        self.signalComboBox.setGeometry(QtCore.QRect(80, 40, 191, 22))
+        self.signalComboBox.setObjectName("signalComboBox")
 
         self.retranslateUi(Input)
         QtCore.QMetaObject.connectSlotsByName(Input)
