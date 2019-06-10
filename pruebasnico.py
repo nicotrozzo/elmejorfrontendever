@@ -10,29 +10,63 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         QtWidgets.QMainWindow.__init__(self, *args, **kwargs)
         self.setupUi(self)
         #setear todos los callbacks de botones
-        self.entrance = EntranceDialog()
-        self.inputSelectButton.clicked.connect(self.clickedInput)
-        self.filterSelectButton.clicked.connect(self.clickedFilter)
-        self.outputConfigButton.clicked.connect(self.clickedOutput)
+        self.inputWindow = InputDialog(self)
+        self.filterWindow = FilterDialog(self)
+        self.outputWindow = OutputDialog(self)
+        self.inputSelectButton.clicked.connect(self.clicked_input)
+        self.filterSelectButton.clicked.connect(self.clicked_filter)
+        self.outputConfigButton.clicked.connect(self.clicked_output)
 
-    def clickedInput(self):
-        self.entrance.show()
+    def clicked_input(self):
+        self.inputWindow.show()
 
-    def clickedFilter(self):
-        self.filter
+    def clicked_filter(self):
+        self.filterWindow.show()
 
-class EntranceDialog(QtWidgets.QDialog, Ui_Input):
-    def __init__(self, *args, **kwargs):
+    def clicked_output(self):
+        self.outputWindow.show()
+
+    #éste metodo lo llaman los cuadros de diálogo cuando terminan, la idea es actualizar los line edits con la nueva informacion
+    def update(self):
+        print("ANDA EL UPDATE")
+
+
+class InputDialog(QtWidgets.QDialog, Ui_Input):
+    def __init__(self, main_window, *args, **kwargs):
         QtWidgets.QDialog.__init__(self, *args, **kwargs)
         self.setupUi(self)
+        self.okButton.clicked.connect(self.finished_selecting)
+        self.mainWindow = main_window
+
+    def finished_selecting(self):
+        self.hide()
+        self.mainWindow.update()
+
+    def
 
 
 class FilterDialog(QtWidgets.QDialog, Ui_Filter):
-    pass
+    def __init__(self, main_window, *args, **kwargs):
+        QtWidgets.QDialog.__init__(self, *args, **kwargs)
+        self.setupUi(self)
+        self.okButton.clicked.connect(self.finished_selecting)
+        self.mainWindow = main_window
+
+    def finished_selecting(self):
+        self.hide()
+        self.mainWindow.update()
 
 
 class OutputDialog(QtWidgets.QDialog, Ui_Output):
-    pass
+    def __init__(self, main_window, *args, **kwargs):
+        QtWidgets.QDialog.__init__(self, *args, **kwargs)
+        self.setupUi(self)
+        self.okButton.clicked.connect(self.finished_selecting)
+        self.mainWindow = main_window
+
+    def finished_selecting(self):
+        self.hide()
+        self.mainWindow.update()
 
 
 if __name__ == "__main__":

@@ -12,9 +12,9 @@ class Ui_Input(object):
     def setupUi(self, Input):
         Input.setObjectName("Input")
         Input.resize(374, 220)
-        self.pushButton = QtWidgets.QPushButton(Input)
-        self.pushButton.setGeometry(QtCore.QRect(294, 190, 51, 23))
-        self.pushButton.setObjectName("pushButton")
+        self.okButton = QtWidgets.QPushButton(Input)
+        self.okButton.setGeometry(QtCore.QRect(294, 190, 51, 23))
+        self.okButton.setObjectName("okButton")
         self.lineEdit = QtWidgets.QLineEdit(Input)
         self.lineEdit.setGeometry(QtCore.QRect(80, 10, 191, 20))
         self.lineEdit.setFrame(False)
@@ -31,7 +31,7 @@ class Ui_Input(object):
     def retranslateUi(self, Input):
         _translate = QtCore.QCoreApplication.translate
         Input.setWindowTitle(_translate("Input", "Dialog"))
-        self.pushButton.setText(_translate("Input", "Ok"))
+        self.okButton.setText(_translate("Input", "Ok"))
         self.lineEdit.setText(_translate("Input", "Seleccione la entrada deseada"))
 
 
