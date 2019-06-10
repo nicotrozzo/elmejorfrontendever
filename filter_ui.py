@@ -12,6 +12,9 @@ class Ui_Filter(object):
     def setupUi(self, Filter):
         Filter.setObjectName("Filter")
         Filter.resize(400, 300)
+        self.okButton = QtWidgets.QPushButton(Filter)
+        self.okButton.setGeometry(QtCore.QRect(50, 40, 75, 23))
+        self.okButton.setObjectName("okButton")
 
         self.retranslateUi(Filter)
         QtCore.QMetaObject.connectSlotsByName(Filter)
@@ -19,6 +22,7 @@ class Ui_Filter(object):
     def retranslateUi(self, Filter):
         _translate = QtCore.QCoreApplication.translate
         Filter.setWindowTitle(_translate("Filter", "Dialog"))
+        self.okButton.setText(_translate("Filter", "PushButton"))
 
 
 if __name__ == "__main__":
