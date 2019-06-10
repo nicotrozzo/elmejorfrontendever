@@ -52,7 +52,7 @@
     </rect>
    </property>
   </widget>
-  <widget class="QLabel" name="labelFilterComboBox">
+  <widget class="QLabel" name="labelInputComboBox">
    <property name="geometry">
     <rect>
      <x>90</x>
