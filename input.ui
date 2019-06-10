@@ -48,7 +48,7 @@
     <bool>true</bool>
    </property>
   </widget>
-  <widget class="QComboBox" name="comboBox">
+  <widget class="QComboBox" name="signalComboBox">
    <property name="geometry">
     <rect>
      <x>80</x>
