@@ -37,7 +37,7 @@ class FilterDialog(QtWidgets.QDialog, Ui_Filter):
 
 
 # Grupo de un LineEdit y un label (el titulo de la propiedad)
-class DataEntry():
+class DataEntry:
     def __init__(self, line_edit, label):
         self.propertyTitle = label
         self.propertyLineEdit = line_edit
@@ -45,14 +45,38 @@ class DataEntry():
         self.onlyNumbers = True
         self.set_only_numbers(self.onlyNumbers)
         self.hide_all()
+        self.isHidden = True
+        self.inError = False
+        self.errorStyleSheet = "QLineEdit { background: rgb(255, 0, 0); selection-background-color: rgb(255, 0, 0); }"
+        self.normalStyleSheet = "QLineEdit { background: rgb(255, 255, 255); selection-background-color: rgb(255, " \
+                                "255, 255); } "
+        self.propertyLineEdit.textChanged.connect(self.normal_style)
+
+    def errorDetected(self):
+        self.propertyLineEdit.setStyleSheet(self.errorStyleSheet)
+        self.inError = True
+
+    def normal_style(self):
+        if self.inError:
+            self.propertyLineEdit.setStyleSheet(self.normalStyleSheet)
+            self.inError = False
+
+    def delete_text(self):
+        self.propertyLineEdit.setText("")
 
     def hide_all(self):
         self.propertyLineEdit.hide()
         self.propertyTitle.hide()
+        self.isHidden = True
+        self.delete_text()
 
     def show_all(self):
         self.propertyLineEdit.show()
         self.propertyTitle.show()
+        self.isHidden = False
+
+    def is_hidden(self):
+        return self.isHidden
 
     def update_user_input_value(self):
         self.userInputValue = self.propertyLineEdit.text()
@@ -73,20 +97,26 @@ class DataEntry():
 
 
 # Grupo de un Combo Box y un label (el titulo de la propiedad)
-class DataEntryCombo():
+class DataEntryCombo:
     def __init__(self, combo_box, label):
         self.propertyTitle = label
         self.propertyComboBox = combo_box
         self.propertyValue = self.propertyComboBox.currentText()
         self.hide_all()
+        self.isHidden = True
 
     def hide_all(self):
         self.propertyComboBox.hide()
         self.propertyTitle.hide()
+        self.isHidden = True
 
     def show_all(self):
         self.propertyComboBox.show()
         self.propertyTitle.show()
+        self.isHidden = False
+
+    def is_hidden(self):
+        return self.isHidden
 
     def update_property_value(self):
         self.propertyValue = self.propertyComboBox.currentText()
@@ -98,6 +128,12 @@ class DataEntryCombo():
         self.propertyTitle.setText(title)
 
 
+class MyWidget(QtWidgets.QWidget):
+    def __init__(self, button, callback):
+        QtWidgets.QWidget.__init__(self)
+        button.clicked.connect(callback)
+
+
 if __name__ == "__main__":
     app = QtWidgets.QApplication([])
 
@@ -105,12 +141,17 @@ if __name__ == "__main__":
 
     parameters1 = DataEntry(dig.editProperty1, dig.titleProperty1)
     parameters1.set_property_title("Primer cero")
+    parameters1.show_all()
+    parameters1.delete_text()
+    parameters1.errorDetected()
 
     parameters2 = DataEntry(dig.editProperty2, dig.titleProperty2)
     parameters2.set_property_title("Segundo cero")
 
     parameters3 = DataEntry(dig.editProperty3, dig.titleProperty3)
     parameters3.hide_all()
+
+    dig.okButton.clicked.connect(parameters1.delete_text)
 
     dig.show()
     app.exec()
