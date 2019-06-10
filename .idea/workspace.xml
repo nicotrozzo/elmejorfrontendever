@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="59df4d25-0958-402e-8b39-127fabf2e79e" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pruebaspablo.py" beforeDir="false" afterPath="$PROJECT_DIR$/pruebaspablo.py" afterDir="false" />
-    </list>
+    <list default="true" id="59df4d25-0958-402e-8b39-127fabf2e79e" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,8 +41,8 @@
         <entry file="file://$PROJECT_DIR$/pruebaspablo.py">
           <provider selected="true" editor-type-id="live-pycharm">
             <state>
-              <first_editor relative-caret-position="290">
-                <caret line="85" column="34" lean-forward="true" selection-start-line="85" selection-start-column="34" selection-end-line="85" selection-end-column="34" />
+              <first_editor relative-caret-position="137">
+                <caret line="76" lean-forward="true" selection-start-line="76" selection-end-line="76" />
                 <folding>
                   <element signature="e#0#10#0" expanded="true" />
                 </folding>
@@ -262,7 +259,14 @@
       <option name="project" value="LOCAL" />
       <updated>1560154036570</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="get values">
+      <created>1560154522315</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1560154522315</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -296,7 +300,8 @@
     <MESSAGE value="comment" />
     <MESSAGE value="in error" />
     <MESSAGE value="input ui" />
-    <option name="LAST_COMMIT_MESSAGE" value="input ui" />
+    <MESSAGE value="get values" />
+    <option name="LAST_COMMIT_MESSAGE" value="get values" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/scratch_2.py" />
@@ -328,8 +333,8 @@
     <entry file="file://$PROJECT_DIR$/pruebaspablo.py">
       <provider selected="true" editor-type-id="live-pycharm">
         <state>
-          <first_editor relative-caret-position="290">
-            <caret line="85" column="34" lean-forward="true" selection-start-line="85" selection-start-column="34" selection-end-line="85" selection-end-column="34" />
+          <first_editor relative-caret-position="137">
+            <caret line="76" lean-forward="true" selection-start-line="76" selection-end-line="76" />
             <folding>
               <element signature="e#0#10#0" expanded="true" />
             </folding>
