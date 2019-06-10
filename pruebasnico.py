@@ -5,7 +5,7 @@ from output_ui import *
 from backend import *
 from PyQt5.QtGui import QDoubleValidator
 from PyQt5.QtWidgets import QLineEdit, QLabel
-from pruebaspablo import DataEntry,
+from pruebaspablo import DataEntry, DataEntryCombo
 import sys
 
 
@@ -45,10 +45,11 @@ class AbstractDialog(QtWidgets.QDialog):
         self.mainWindow = main_window
 
 
-class InputDialog(AbstractDialog, Ui_Input):
+class InputDialog(AbstractDialog, Ui_):
     def __init__(self, all_signals, main_window, *args, **kwargs):
         AbstractDialog.__init__(self, main_window, *args, **kwargs)
         self.okButton.clicked.connect(self.finished_selecting)
+        self.dataentries = []
         self.dataentries.append(DataEntry(self.editProperty1, self.titleProperty1))
         self.dataentries.append(DataEntry(self.editProperty2, self.titleProperty2))
         self.dataentries.append(DataEntry(self.editProperty3, self.titleProperty3))
@@ -137,8 +138,7 @@ class FilterDialog(AbstractDialog, Ui_Filter):
                 else:
                     self.dataentries[i].error()
 
-
-    #devuelve las properties del elemento seleccionado
+    # devuelve las properties del elemento seleccionado
     def get_data(self):
         ret = {}
         for fil in self.filters:
@@ -200,7 +200,10 @@ class OutputDialog(AbstractDialog, Ui_Output):
 
 if __name__ == "__main__":
     app = QtWidgets.QApplication([])
-
-    window = MainWindow()
+    signals = [Signal("senodete"), Signal("escalon")]
+    filters = [Filter("filtro1"), Filter("Filtro2")]
+    outputs = [outputConfig("chau")]
+    back = BackEnd(signals, filters, outputs)
+    window = MainWindow(back)
     window.show()
     sys.exit(app.exec_())
