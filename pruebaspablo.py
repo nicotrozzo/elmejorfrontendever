@@ -71,6 +71,31 @@ class DataEntry():
         self.propertyTitle.setText(title)
 
 
+class DataEntryCombo():
+    def __init__(self, combo_box, label):
+        self.propertyTitle = label
+        self.propertyComboBox = combo_box
+        self.propertyValue = self.propertyComboBox.currentText()
+        self.hide_all()
+
+    def hide_all(self):
+        self.propertyComboBox.hide()
+        self.propertyTitle.hide()
+
+    def show_all(self):
+        self.propertyComboBox.show()
+        self.propertyTitle.show()
+
+    def update_property_value(self):
+        self.propertyValue = self.propertyComboBox.currentText()
+
+    def get_property_value(self):
+        return self.propertyValue
+
+    def set_property_title(self, title):
+        self.propertyTitle.setText(title)
+
+
 if __name__ == "__main__":
     app = QtWidgets.QApplication([])
 
