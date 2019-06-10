@@ -45,8 +45,8 @@
   <widget class="QComboBox" name="filterComboBox">
    <property name="geometry">
     <rect>
-     <x>280</x>
-     <y>160</y>
+     <x>300</x>
+     <y>200</y>
      <width>351</width>
      <height>41</height>
     </rect>
@@ -55,14 +55,14 @@
   <widget class="QLabel" name="labelFilterComboBox">
    <property name="geometry">
     <rect>
-     <x>280</x>
+     <x>150</x>
      <y>170</y>
-     <width>351</width>
+     <width>161</width>
      <height>20</height>
     </rect>
    </property>
    <property name="text">
-    <string>Seleccione un filtro</string>
+    <string>Seleccione un filtro:</string>
    </property>
    <property name="alignment">
     <set>Qt::AlignCenter</set>
@@ -72,7 +72,7 @@
    <property name="geometry">
     <rect>
      <x>90</x>
-     <y>260</y>
+     <y>280</y>
      <width>221</width>
      <height>20</height>
     </rect>
@@ -84,76 +84,94 @@
   <widget class="QLabel" name="titleProperty1">
    <property name="geometry">
     <rect>
-     <x>290</x>
-     <y>310</y>
-     <width>55</width>
-     <height>16</height>
+     <x>134</x>
+     <y>330</y>
+     <width>211</width>
+     <height>20</height>
     </rect>
    </property>
    <property name="text">
     <string>Título 1</string>
    </property>
+   <property name="alignment">
+    <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+   </property>
   </widget>
   <widget class="QLabel" name="titleProperty2">
    <property name="geometry">
     <rect>
-     <x>290</x>
-     <y>360</y>
-     <width>55</width>
-     <height>16</height>
+     <x>134</x>
+     <y>380</y>
+     <width>211</width>
+     <height>20</height>
     </rect>
    </property>
    <property name="text">
     <string>Título 2</string>
    </property>
+   <property name="alignment">
+    <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+   </property>
   </widget>
   <widget class="QLabel" name="titleProperty3">
    <property name="geometry">
     <rect>
-     <x>290</x>
-     <y>410</y>
-     <width>55</width>
-     <height>16</height>
+     <x>134</x>
+     <y>430</y>
+     <width>211</width>
+     <height>20</height>
     </rect>
    </property>
    <property name="text">
     <string>Título 3</string>
    </property>
+   <property name="alignment">
+    <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+   </property>
   </widget>
   <widget class="QLabel" name="titleProperty4">
    <property name="geometry">
     <rect>
-     <x>290</x>
-     <y>460</y>
-     <width>55</width>
-     <height>16</height>
+     <x>134</x>
+     <y>480</y>
+     <width>211</width>
+     <height>20</height>
     </rect>
    </property>
    <property name="text">
     <string>Título 4</string>
    </property>
+   <property name="alignment">
+    <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+   </property>
   </widget>
   <widget class="QLabel" name="titleProperty5">
    <property name="geometry">
     <rect>
-     <x>290</x>
-     <y>510</y>
-     <width>55</width>
-     <height>16</height>
+     <x>134</x>
+     <y>530</y>
+     <width>211</width>
+     <height>20</height>
     </rect>
    </property>
    <property name="text">
     <string>Título 5</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
    </property>
   </widget>
   <widget class="QLineEdit" name="editProperty1">
    <property name="geometry">
     <rect>
      <x>390</x>
-     <y>310</y>
+     <y>330</y>
      <width>201</width>
      <height>22</height>
     </rect>
+   </property>
+   <property name="text">
+    <string/>
    </property>
    <property name="placeholderText">
     <string/>
@@ -163,7 +181,7 @@
    <property name="geometry">
     <rect>
      <x>390</x>
-     <y>360</y>
+     <y>380</y>
      <width>201</width>
      <height>22</height>
     </rect>
@@ -173,7 +191,7 @@
    <property name="geometry">
     <rect>
      <x>390</x>
-     <y>410</y>
+     <y>430</y>
      <width>201</width>
      <height>22</height>
     </rect>
@@ -183,7 +201,7 @@
    <property name="geometry">
     <rect>
      <x>390</x>
-     <y>460</y>
+     <y>480</y>
      <width>201</width>
      <height>22</height>
     </rect>
@@ -193,7 +211,7 @@
    <property name="geometry">
     <rect>
      <x>390</x>
-     <y>510</y>
+     <y>530</y>
      <width>201</width>
      <height>22</height>
     </rect>

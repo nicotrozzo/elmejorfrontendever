@@ -2,7 +2,7 @@ import sys
 
 from PyQt5 import QtWidgets, uic
 from PyQt5.QtGui import QDoubleValidator
-from PyQt5.QtWidgets import QLineEdit, QLabel
+from PyQt5.QtWidgets import QLineEdit, QLabel, QComboBox
 
 from filter_ui import Ui_Filter
 from frontend_ui import Ui_MainWindow
@@ -36,13 +36,14 @@ class FilterDialog(QtWidgets.QDialog, Ui_Filter):
     pass
 
 
-class DataEntry(QLineEdit, QLabel):
+class DataEntry():
     def __init__(self, line_edit, label):
         self.propertyTitle = label
         self.propertyLineEdit = line_edit
         self.userInputValue = None
         self.onlyNumbers = True
         self.set_only_numbers(self.onlyNumbers)
+        self.hide_all()
 
     def hide_all(self):
         self.propertyLineEdit.hide()
@@ -67,7 +68,7 @@ class DataEntry(QLineEdit, QLabel):
             self.propertyLineEdit.setValidator(None)
 
     def set_property_title(self, title):
-        self.propertyTitle.text = title
+        self.propertyTitle.setText(title)
 
 
 if __name__ == "__main__":
