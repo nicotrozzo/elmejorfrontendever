@@ -19,9 +19,9 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         self.setupUi(self)
         #setear todos los callbacks de botones
         self.backend = backend
-        self.inputWindow = InputDialog(self, backend.signals())
-        self.filterWindow = FilterDialog(self, backend.filters())
-        self.outputWindow = OutputDialog(self, backend.outputconfig())
+        self.inputWindow = InputDialog(backend.signals, self)
+        self.filterWindow = FilterDialog(backend.filters, self)
+        self.outputWindow = OutputDialog(backend.outputConfigs, self)
         self.inputSelectButton.clicked.connect(self.clicked_input)
         self.filterSelectButton.clicked.connect(self.clicked_filter)
         self.outputConfigButton.clicked.connect(self.clicked_output)
@@ -55,20 +55,20 @@ class AbstractDialog(QtWidgets.QDialog):
         self.setupUi(self)
         self.okButton.clicked.connect(self.finished_selecting)
         self.mainWindow = main_window
+        self.dataentries = []
 
 
 class InputDialog(AbstractDialog, Ui_Input):
     def __init__(self, all_signals, main_window, *args, **kwargs):
         AbstractDialog.__init__(self, main_window, *args, **kwargs)
         self.okButton.clicked.connect(self.finished_selecting)
-        self.dataentries = []
         self.dataentries.append(DataEntry(self.editProperty1, self.titleProperty1))
         self.dataentries.append(DataEntry(self.editProperty2, self.titleProperty2))
         self.dataentries.append(DataEntry(self.editProperty3, self.titleProperty3))
         self.dataentries.append(DataEntry(self.editProperty4, self.titleProperty4))
         self.dataentries.append(DataEntry(self.editProperty5, self.titleProperty5))
         for sig in all_signals:
-            self.inputComboBox.addItem(sig.name().upper())         #agrega todas las señales al menu desplegable
+            self.inputComboBox.addItem(sig.name.upper())         #agrega todas las señales al menu desplegable
         self.signals = all_signals
         self.inputComboBox.currentIndexChanged.connect(self.showCurrentProperties)
         self.showCurrentProperties()
@@ -78,9 +78,9 @@ class InputDialog(AbstractDialog, Ui_Input):
         for x in self.dataentries:
             x.hide_all()
         for sig in self.signals:
-            if sig.name().lower() == self.inputComboBox.currentText().lower():
+            if sig.name.lower() == self.inputComboBox.currentText().lower():
                 i = 0
-                for key in sig.properties():
+                for key in sig.get_properties():
                     self.dataentries[i].show_all()
                     self.dataentries[i].set_property_title(key)
                     i += 1
@@ -88,10 +88,10 @@ class InputDialog(AbstractDialog, Ui_Input):
 
     def finished_selecting(self):
         for sig in self.signals:
-            if sig.name().lower() == self.inputComboBox.currentText().lower():
+            if sig.name.lower() == self.inputComboBox.currentText().lower():
                 i = 0
-                for key in sig.properties():
-                    sig.properties[key] = self.dataentries[i].getUserInputValue()
+                for key in sig.get_properties():
+                    sig.get_properties()[key] = self.dataentries[i].getUserInputValue()
                     i += 1
                 if sig.validate():
                     self.hide()
@@ -105,8 +105,8 @@ class InputDialog(AbstractDialog, Ui_Input):
     def get_data(self):
         ret = {}
         for sig in self.signals:
-            if sig.name().lower() == self.inputComboBox.currentText().lower():
-                ret = sig.properties()
+            if sig.name.lower() == self.inputComboBox.currentText().lower():
+                ret = sig.get_properties()
                 break
         return ret
 
@@ -114,8 +114,8 @@ class InputDialog(AbstractDialog, Ui_Input):
         ret = ""
         if self.done:
             for sig in self.signals:
-                if sig.name().lower() == self.inputComboBox.currentText().lower():
-                    ret = sig.name()
+                if sig.name.lower() == self.inputComboBox.currentText().lower():
+                    ret = sig.name
                     break
         return ret
 
@@ -130,7 +130,7 @@ class FilterDialog(AbstractDialog, Ui_Filter):
         self.dataentries.append(DataEntry(self.editProperty5, self.titleProperty5))
         self.filters = all_filters
         for fil in all_filters:
-            self.filterComboBox.addItem(fil.name().upper())         #agrega todos los filtros al menu desplegable
+            self.filterComboBox.addItem(fil.name.upper())         #agrega todos los filtros al menu desplegable
         self.filterComboBox.currentIndexChanged.connect(self.showCurrentProperties)
         self.showCurrentProperties()
         self.done = False
@@ -139,9 +139,9 @@ class FilterDialog(AbstractDialog, Ui_Filter):
         for x in self.dataentries:
             x.hide_all()
         for fil in self.filters:
-            if fil.name().lower() == self.filterComboBox.currentText().lower():
+            if fil.name.lower() == self.filterComboBox.currentText().lower():
                 i = 0
-                for key in fil.properties():
+                for key in fil.get_properties():
                     self.dataentries[i].show_all()
                     self.dataentries[i].set_property_title(key)
                     i += 1
@@ -149,10 +149,10 @@ class FilterDialog(AbstractDialog, Ui_Filter):
 
     def finished_selecting(self):
         for fil in self.filters:
-            if fil.name().lower() == self.filterComboBox.currentText().lower():
+            if fil.name.lower() == self.filterComboBox.currentText().lower():
                 i = 0
-                for key in fil.properties():
-                    fil.properties[key] = self.dataentries[i].getUserInputValue()
+                for key in fil.get_properties():
+                    fil.get_properties()[key] = self.dataentries[i].getUserInputValue()
                     i += 1
                 if fil.validate():
                     self.hide()
@@ -165,8 +165,8 @@ class FilterDialog(AbstractDialog, Ui_Filter):
     def get_data(self):
         ret = {}
         for fil in self.filters:
-            if fil.name().lower() == self.filterComboBox.currentText().lower():
-                ret = fil.properties()
+            if fil.name.lower() == self.filterComboBox.currentText().lower():
+                ret = fil.get_properties()
                 break
         return ret
 
@@ -174,8 +174,8 @@ class FilterDialog(AbstractDialog, Ui_Filter):
         ret = ""
         if self.done:
             for fil in self.filters:
-                if fil.name().lower() == self.filterComboBox.currentText().lower():
-                    ret = fil.name()
+                if fil.name.lower() == self.filterComboBox.currentText().lower():
+                    ret = fil.name
                     break
         return ret
 
@@ -188,7 +188,7 @@ class OutputDialog(AbstractDialog, Ui_Output):
         self.dataentries.append(DataEntryCombo(self.comboProperty3, self.titleProperty3))
         self.dataentries.append(DataEntryCombo(self.comboProperty4, self.titleProperty4))
         for out in all_outputs:
-            self.outputComboBox.addItem(out.name().upper())         #agrega todas las señales al menu desplegable
+            self.outputComboBox.addItem(out.name.upper())         #agrega todas las señales al menu desplegable
         self.outputs = all_outputs
         self.outputComboBox.currentIndexChanged.connect(self.showCurrentProperties)
         self.showCurrentProperties()
@@ -197,19 +197,19 @@ class OutputDialog(AbstractDialog, Ui_Output):
         for x in self.dataentries:
             x.hide_all()
         for out in self.outputs:
-            if out.name().lower() == self.outputComboBox.currentText().lower():
+            if out.name.lower() == self.outputComboBox.currentText().lower():
                 i = 0
-                for key in out.properties():
+                for key in out.get_properties():
                     self.dataentries[i].show_all()
                     self.dataentries[i].set_property_title(key)
                     i += 1
 
     def finished_selecting(self):
         for out in self.outputs:
-            if out.name().lower() == self.signalComboBox.currentText().lower():
+            if out.name.lower() == self.signalComboBox.currentText().lower():
                 i = 0
-                for key in out.properties():
-                    out.properties[key] = self.dataentries[i].getUserInputValue()
+                for key in out.get_properties():
+                    out.get_properties()[key] = self.dataentries[i].getUserInputValue()
                     i += 1
                 if out.validate():
                     self.hide()
@@ -222,8 +222,8 @@ class OutputDialog(AbstractDialog, Ui_Output):
     def get_data(self):
         ret = {}
         for out in self.outputs:
-            if out.name().lower() == self.outputComboBox.currentText().lower():
-                ret = out.properties()
+            if out.name.lower() == self.outputComboBox.currentText().lower():
+                ret = out.get_properties()
                 break
         return ret
 
@@ -231,8 +231,8 @@ class OutputDialog(AbstractDialog, Ui_Output):
         ret = ""
         if self.done:
             for out in self.outputs:
-                if out.name().lower() == self.outputComboBox.currentText().lower():
-                    ret = out.name()
+                if out.name.lower() == self.outputComboBox.currentText().lower():
+                    ret = out.name
                     break
         return ret
 
@@ -241,7 +241,7 @@ if __name__ == "__main__":
     app = QtWidgets.QApplication([])
     signals = [Signal("senodete"), Signal("escalon")]
     filters = [Filter("filtro1"), Filter("Filtro2")]
-    outputs = [OutputConfig("chau")]
+    outputs = [OutputConfig("chau"), OutputConfig("hola")]
     back = BackEnd(signals, filters, outputs)
     window = MainWindow(back)
     window.show()
