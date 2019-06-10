@@ -36,7 +36,7 @@ class FilterDialog(QtWidgets.QDialog, Ui_Filter):
     pass
 
 
-class FilterParameterViews(QLineEdit, QLabel):
+class DataEntry(QLineEdit, QLabel):
     def __init__(self, line_edit, label):
         self.propertyTitle = label
         self.propertyLineEdit = line_edit
@@ -66,17 +66,8 @@ class FilterParameterViews(QLineEdit, QLabel):
         else:
             self.propertyLineEdit.setValidator(None)
 
-    def get_only_numbers(self):
-        return self.onlyNumbers
-
     def set_property_title(self, title):
-        self.propertyTitle = title
-
-    def get_line_edit(self):
-        return self.propertyLineEdit
-
-    def get_label(self):
-        return self.propertyTitle
+        self.propertyTitle.text = title
 
 
 if __name__ == "__main__":
@@ -84,13 +75,13 @@ if __name__ == "__main__":
 
     dig = uic.loadUi("filter.ui")
 
-    parameters1 = FilterParameterViews(dig.editProperty1, dig.titleProperty1)
+    parameters1 = DataEntry(dig.editProperty1, dig.titleProperty1)
     parameters1.set_property_title("Primer cero")
 
-    parameters2 = FilterParameterViews(dig.editProperty2, dig.titleProperty2)
+    parameters2 = DataEntry(dig.editProperty2, dig.titleProperty2)
     parameters2.set_property_title("Segundo cero")
 
-    parameters3 = FilterParameterViews(dig.editProperty3, dig.titleProperty3)
+    parameters3 = DataEntry(dig.editProperty3, dig.titleProperty3)
     parameters3.hide_all()
 
     dig.show()
