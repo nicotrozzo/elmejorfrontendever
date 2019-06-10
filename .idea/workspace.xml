@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="59df4d25-0958-402e-8b39-127fabf2e79e" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pruebaspablo.py" beforeDir="false" afterPath="$PROJECT_DIR$/pruebaspablo.py" afterDir="false" />
-    </list>
+    <list default="true" id="59df4d25-0958-402e-8b39-127fabf2e79e" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -12,13 +9,13 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+    <leaf>
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/pruebasnico.py">
           <provider selected="true" editor-type-id="live-pycharm">
             <state>
-              <first_editor relative-caret-position="258">
-                <caret line="47" lean-forward="true" selection-start-line="47" selection-end-line="47" />
+              <first_editor relative-caret-position="287">
+                <caret line="145" column="38" lean-forward="true" selection-start-line="145" selection-start-column="38" selection-end-line="145" selection-end-column="38" />
                 <folding>
                   <element signature="e#0#25#0" expanded="true" />
                 </folding>
@@ -29,52 +26,28 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/filter_ui.py">
+        <entry file="file://$PROJECT_DIR$/pruebaspablo.py">
           <provider selected="true" editor-type-id="live-pycharm">
             <state>
-              <first_editor relative-caret-position="136">
-                <caret line="8" column="42" selection-start-line="8" selection-start-column="42" selection-end-line="8" selection-end-column="42" />
+              <first_editor relative-caret-position="204">
+                <caret line="12" column="30" selection-start-line="12" selection-start-column="30" selection-end-line="12" selection-end-column="30" />
+                <folding>
+                  <element signature="e#0#10#0" expanded="true" />
+                </folding>
               </first_editor>
               <second_editor />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/pruebaspablo.py">
-          <provider selected="true" editor-type-id="live-pycharm">
-            <state>
-              <first_editor relative-caret-position="290">
-                <caret line="85" column="34" lean-forward="true" selection-start-line="85" selection-start-column="34" selection-end-line="85" selection-end-column="34" />
-                <folding>
-                  <element signature="e#0#10#0" expanded="true" />
-                </folding>
-              </first_editor>
-              <second_editor relative-caret-position="-1105">
-                <caret line="1" selection-start-line="1" selection-end-line="2" />
-              </second_editor>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/frontend_ui.py">
+        <entry file="file://$PROJECT_DIR$/backend.py">
           <provider selected="true" editor-type-id="live-pycharm">
             <state>
-              <first_editor relative-caret-position="170">
-                <caret line="22" column="75" lean-forward="true" selection-start-line="22" selection-start-column="75" selection-end-line="22" selection-end-column="75" />
+              <first_editor>
+                <caret lean-forward="true" />
               </first_editor>
-              <second_editor relative-caret-position="-119" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/input_ui.py">
-          <provider selected="true" editor-type-id="live-pycharm">
-            <state>
-              <first_editor relative-caret-position="-72" />
-              <second_editor relative-caret-position="-72" />
+              <second_editor />
             </state>
           </provider>
         </entry>
@@ -88,29 +61,33 @@
       </list>
     </option>
   </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>inputdial</find>
+    </findStrings>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/pruebasnico.py" />
         <option value="$PROJECT_DIR$/pruebaspablo.py" />
+        <option value="$PROJECT_DIR$/backend.py" />
+        <option value="$PROJECT_DIR$/pruebasnico.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="10" />
-    <option name="y" value="20" />
-    <option name="width" value="1347" />
-    <option name="height" value="689" />
+    <option name="x" value="-7" />
+    <option name="width" value="697" />
+    <option name="height" value="735" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -122,6 +99,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -141,7 +119,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.pruebaspablo">
+  <component name="RunManager" selected="Python.pruebasnico">
     <configuration name="pruebasnico" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="elmejorfrontendever" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -190,8 +168,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.pruebaspablo" />
         <item itemvalue="Python.pruebasnico" />
+        <item itemvalue="Python.pruebaspablo" />
       </list>
     </recent_temporary>
   </component>
@@ -262,19 +240,33 @@
       <option name="project" value="LOCAL" />
       <updated>1560154036570</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="no quiere">
+      <created>1560154707738</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1560154707738</updated>
+    </task>
+    <task id="LOCAL-00010" summary="cruzo dedos">
+      <created>1560155586932</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1560155586932</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2001321" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.042432815" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4985119" visible="true" weight="0.39443535" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.042432815" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -282,7 +274,7 @@
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Terminal" order="8" />
       <window_info anchor="bottom" id="Python Console" order="9" />
-      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
+      <window_info active="true" anchor="bottom" id="Event Log" order="10" sideWeight="0.5014881" side_tool="true" visible="true" weight="0.39443535" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -296,17 +288,38 @@
     <MESSAGE value="comment" />
     <MESSAGE value="in error" />
     <MESSAGE value="input ui" />
-    <option name="LAST_COMMIT_MESSAGE" value="input ui" />
+    <MESSAGE value="no quiere" />
+    <MESSAGE value="cruzo dedos" />
+    <option name="LAST_COMMIT_MESSAGE" value="cruzo dedos" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/scratch_2.py" />
-    <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/scratch.py">
+    <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/scratch.py" />
+    <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="18" lean-forward="true" selection-start-line="5" selection-start-column="18" selection-end-line="5" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pruebaspablo.py">
+      <provider selected="true" editor-type-id="live-pycharm">
+        <state>
+          <first_editor relative-caret-position="204">
+            <caret line="12" column="30" selection-start-line="12" selection-start-column="30" selection-end-line="12" selection-end-column="30" />
+            <folding>
+              <element signature="e#0#10#0" expanded="true" />
+            </folding>
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend.py">
       <provider selected="true" editor-type-id="live-pycharm">
         <state>
           <first_editor>
-            <folding>
-              <element signature="e#0#12#0" expanded="true" />
-            </folding>
+            <caret lean-forward="true" />
           </first_editor>
           <second_editor />
         </state>
@@ -315,28 +328,13 @@
     <entry file="file://$PROJECT_DIR$/pruebasnico.py">
       <provider selected="true" editor-type-id="live-pycharm">
         <state>
-          <first_editor relative-caret-position="258">
-            <caret line="47" lean-forward="true" selection-start-line="47" selection-end-line="47" />
+          <first_editor relative-caret-position="287">
+            <caret line="145" column="38" lean-forward="true" selection-start-line="145" selection-start-column="38" selection-end-line="145" selection-end-column="38" />
             <folding>
               <element signature="e#0#25#0" expanded="true" />
             </folding>
           </first_editor>
           <second_editor relative-caret-position="-119" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pruebaspablo.py">
-      <provider selected="true" editor-type-id="live-pycharm">
-        <state>
-          <first_editor relative-caret-position="290">
-            <caret line="85" column="34" lean-forward="true" selection-start-line="85" selection-start-column="34" selection-end-line="85" selection-end-column="34" />
-            <folding>
-              <element signature="e#0#10#0" expanded="true" />
-            </folding>
-          </first_editor>
-          <second_editor relative-caret-position="-1105">
-            <caret line="1" selection-start-line="1" selection-end-line="2" />
-          </second_editor>
         </state>
       </provider>
     </entry>
