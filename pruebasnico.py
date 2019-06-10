@@ -3,6 +3,9 @@ from input_ui import *
 from filter_ui import *
 from output_ui import *
 from backend import *
+from PyQt5.QtGui import QDoubleValidator
+from PyQt5.QtWidgets import QLineEdit, QLabel
+from pruebaspablo import DataEntry,
 import sys
 
 
@@ -40,35 +43,160 @@ class AbstractDialog(QtWidgets.QDialog):
         self.setupUi(self)
         self.okButton.clicked.connect(self.finished_selecting)
         self.mainWindow = main_window
-        self.selection =
 
-    def finished_selecting(self):
-        self.hide()
-        self.mainWindow.update()
-
-    def get_data(self):
-        return self.
 
 class InputDialog(AbstractDialog, Ui_Input):
     def __init__(self, all_signals, main_window, *args, **kwargs):
         AbstractDialog.__init__(self, main_window, *args, **kwargs)
-        self.dataentries.append(DataEntry())
-
-        #dataentry
-
+        self.okButton.clicked.connect(self.finished_selecting)
+        self.dataentries.append(DataEntry(self.editProperty1, self.titleProperty1))
+        self.dataentries.append(DataEntry(self.editProperty2, self.titleProperty2))
+        self.dataentries.append(DataEntry(self.editProperty3, self.titleProperty3))
+        self.dataentries.append(DataEntry(self.editProperty4, self.titleProperty4))
+        self.dataentries.append(DataEntry(self.editProperty5, self.titleProperty5))
+        for sig in all_signals:
+            self.inputComboBox.addItem(sig.name().upper())         #agrega todas las señales al menu desplegable
         self.signals = all_signals
-        for sig in all_signals:                 #cada sig es una señal distinta que se puede tener como input
-            self.signalComboBox.addItem(sig.name())
-            for key in sig.properties:
-                self.
+        self.inputComboBox.currentIndexChanged.connect(self.showCurrentProperties)
+        self.showCurrentProperties()
 
+    def showCurrentProperties(self):
+        for x in self.dataentries:
+            x.hide_all()
+        for sig in self.signals:
+            if sig.name().lower() == self.inputComboBox.currentText().lower():
+                i = 0
+                for key in sig.properties():
+                    self.dataentries[i].show_all()
+                    self.dataentries[i].set_property_title(key)
+                    i += 1
+                break
+
+    def finished_selecting(self):
+        for sig in self.signals:
+            if sig.name().lower() == self.inputComboBox.currentText().lower():
+                i = 0
+                for key in sig.properties():
+                    sig.properties[key] = self.dataentries[i].getUserInputValue()
+                    i += 1
+                if sig.validate():
+                    self.hide()
+                    self.mainWindow.update()
+                    break
+                else:
+                    self.dataentries[i].error()
+
+    #devuelve las properties del elemento seleccionado
+    def get_data(self):
+        ret = {}
+        for sig in self.signals:
+            if sig.name().lower() == self.inputComboBox.currentText().lower():
+                ret = sig.properties()
+                break
+        return ret
 
 
 class FilterDialog(AbstractDialog, Ui_Filter):
-    pass
+    def __init__(self, all_filters, main_window, *args, **kwargs):
+        AbstractDialog.__init__(self, main_window, *args, **kwargs)
+        self.okButton.clicked.connect(self.finished_selecting)
+        self.dataentries.append(DataEntry(self.editProperty1, self.titleProperty1))
+        self.dataentries.append(DataEntry(self.editProperty2, self.titleProperty2))
+        self.dataentries.append(DataEntry(self.editProperty3, self.titleProperty3))
+        self.dataentries.append(DataEntry(self.editProperty4, self.titleProperty4))
+        self.dataentries.append(DataEntry(self.editProperty5, self.titleProperty5))
+        self.filters = all_filters
+        for fil in all_filters:
+            self.filterComboBox.addItem(fil.name().upper())         #agrega todos los filtros al menu desplegable
+        self.filterComboBox.currentIndexChanged.connect(self.showCurrentProperties)
+        self.showCurrentProperties()
+
+    def showCurrentProperties(self):
+        for x in self.dataentries:
+            x.hide_all()
+        for fil in self.filters:
+            if fil.name().lower() == self.filterComboBox.currentText().lower():
+                i = 0
+                for key in fil.properties():
+                    self.dataentries[i].show_all()
+                    self.dataentries[i].set_property_title(key)
+                    i += 1
+                break
+
+    def finished_selecting(self):
+        for fil in self.filters:
+            if fil.name().lower() == self.filterComboBox.currentText().lower():
+                i = 0
+                for key in fil.properties():
+                    fil.properties[key] = self.dataentries[i].getUserInputValue()
+                    i += 1
+                if fil.validate():
+                    self.hide()
+                    self.mainWindow.update()
+                    break
+                else:
+                    self.dataentries[i].error()
+
+
+    #devuelve las properties del elemento seleccionado
+    def get_data(self):
+        ret = {}
+        for fil in self.filters:
+            if fil.name().lower() == self.filterComboBox.currentText().lower():
+                ret = fil.properties()
+                break
+        return ret
+
 
 class OutputDialog(AbstractDialog, Ui_Output):
-    pass
+    def __init__(self, all_outputs, main_window, *args, **kwargs):
+        AbstractDialog.__init__(self, main_window, *args, **kwargs)
+        self.okButton.clicked.connect(self.finished_selecting)
+        self.dataentries.append(DataEntryCombo(self.comboProperty1, self.titleProperty1))
+        self.dataentries.append(DataEntryCombo(self.comboProperty2, self.titleProperty2))
+        self.dataentries.append(DataEntryCombo(self.comboProperty3, self.titleProperty3))
+        self.dataentries.append(DataEntryCombo(self.comboProperty4, self.titleProperty4))
+        for out in all_outputs:
+            self.outputComboBox.addItem(out.name().upper())         #agrega todas las señales al menu desplegable
+        self.outputs = all_outputs
+        self.outputComboBox.currentIndexChanged.connect(self.showCurrentProperties)
+        self.showCurrentProperties()
+
+    def showCurrentProperties(self):
+        for x in self.dataentries:
+            x.hide_all()
+        for out in self.outputs:
+            if out.name().lower() == self.outputComboBox.currentText().lower():
+                i = 0
+                for key in out.properties():
+                    self.dataentries[i].show_all()
+                    self.dataentries[i].set_property_title(key)
+                    i += 1
+                break
+
+    def finished_selecting(self):
+        for out in self.outputs:
+            if out.name().lower() == self.signalComboBox.currentText().lower():
+                i = 0
+                for key in out.properties():
+                    out.properties[key] = self.dataentries[i].getUserInputValue()
+                    i += 1
+                if out.validate():
+                    self.hide()
+                    self.mainWindow.update()
+                    break
+                else:
+                    self.dataentries[i].error()
+
+    #devuelve las properties del elemento seleccionado
+    def get_data(self):
+        ret = {}
+        for out in self.outputs:
+            if out.name().lower() == self.outputComboBox.currentText().lower():
+                ret = out.properties()
+                break
+        return ret
+
 
 if __name__ == "__main__":
     app = QtWidgets.QApplication([])
