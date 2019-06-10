@@ -36,6 +36,7 @@ class FilterDialog(QtWidgets.QDialog, Ui_Filter):
     pass
 
 
+# Grupo de un LineEdit y un label (el titulo de la propiedad)
 class DataEntry():
     def __init__(self, line_edit, label):
         self.propertyTitle = label
@@ -71,6 +72,7 @@ class DataEntry():
         self.propertyTitle.setText(title)
 
 
+# Grupo de un Combo Box y un label (el titulo de la propiedad)
 class DataEntryCombo():
     def __init__(self, combo_box, label):
         self.propertyTitle = label
