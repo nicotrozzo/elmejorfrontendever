@@ -44,8 +44,8 @@
         <entry file="file://$PROJECT_DIR$/pruebaspablo.py">
           <provider selected="true" editor-type-id="live-pycharm">
             <state>
-              <first_editor relative-caret-position="198">
-                <caret line="144" column="31" selection-start-line="144" selection-start-column="31" selection-end-line="144" selection-end-column="31" />
+              <first_editor relative-caret-position="290">
+                <caret line="85" column="34" lean-forward="true" selection-start-line="85" selection-start-column="34" selection-end-line="85" selection-end-column="34" />
                 <folding>
                   <element signature="e#0#10#0" expanded="true" />
                 </folding>
@@ -248,7 +248,21 @@
       <option name="project" value="LOCAL" />
       <updated>1560150840255</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="in error">
+      <created>1560153688383</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1560153688383</updated>
+    </task>
+    <task id="LOCAL-00008" summary="input ui">
+      <created>1560154036570</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1560154036570</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -260,7 +274,7 @@
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.37765205" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.042432815" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.042432815" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -280,7 +294,9 @@
     <MESSAGE value="nombres de uis bien" />
     <MESSAGE value="filter ui&#10;input ui&#10;output ui&#10;dataentrycombo" />
     <MESSAGE value="comment" />
-    <option name="LAST_COMMIT_MESSAGE" value="comment" />
+    <MESSAGE value="in error" />
+    <MESSAGE value="input ui" />
+    <option name="LAST_COMMIT_MESSAGE" value="input ui" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/scratch_2.py" />
@@ -312,8 +328,8 @@
     <entry file="file://$PROJECT_DIR$/pruebaspablo.py">
       <provider selected="true" editor-type-id="live-pycharm">
         <state>
-          <first_editor relative-caret-position="198">
-            <caret line="144" column="31" selection-start-line="144" selection-start-column="31" selection-end-line="144" selection-end-column="31" />
+          <first_editor relative-caret-position="290">
+            <caret line="85" column="34" lean-forward="true" selection-start-line="85" selection-start-column="34" selection-end-line="85" selection-end-column="34" />
             <folding>
               <element signature="e#0#10#0" expanded="true" />
             </folding>

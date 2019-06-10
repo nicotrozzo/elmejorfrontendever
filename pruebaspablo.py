@@ -82,6 +82,7 @@ class DataEntry:
         self.userInputValue = self.propertyLineEdit.text()
 
     def get_user_input_value(self):
+        self.update_user_input_value()
         return self.userInputValue
 
     def set_only_numbers(self, accept_only_numbers):
@@ -122,6 +123,7 @@ class DataEntryCombo:
         self.propertyValue = self.propertyComboBox.currentText()
 
     def get_property_value(self):
+        self.update_property_value()
         return self.propertyValue
 
     def set_property_title(self, title):
