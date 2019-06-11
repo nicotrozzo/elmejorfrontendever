@@ -2,11 +2,25 @@ import sys
 
 from PyQt5 import QtWidgets, uic
 from PyQt5.QtGui import QDoubleValidator
-from PyQt5.QtWidgets import QLineEdit, QLabel, QComboBox
+from PyQt5.QtWidgets import QLineEdit, QLabel, QComboBox, QMainWindow
+from PyQt5.uic import loadUi
+from matplotlib.ticker import MaxNLocator
 
 from filter_ui import Ui_Filter
 from frontend_ui import Ui_MainWindow
 from input_ui import Ui_Input
+
+from PyQt5.QtWidgets import *
+from PyQt5.uic import loadUi
+
+from matplotlib.backends.backend_qt5agg import (NavigationToolbar2QT as NavigationToolbar)
+
+import numpy as np
+import random
+
+from matplotlib.backends.backend_qt5agg import FigureCanvasAgg as FigureCanvas
+from matplotlib.figure import Figure
+import numpy as np
 
 
 class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
@@ -15,14 +29,14 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         self.setupUi(self)
         # setear todos los callbacks de botones
         self.entrance = EntranceDialog()
-        self.inputSelectButton.clicked.connect(self.clickedInput)
+        self.inputSelectButton.clicked.connect(self.clicked_input)
         self.filterSelectButton.clicked.connect(self.clickedFilter)
         self.outputConfigButton.clicked.connect(self.clickedOutput)
 
-    def clickedInput(self):
+    def clicked_input(self):
         self.entrance.show()
 
-    def clickedFilter(self):
+    def clicked_filter(self):
         self.filter
 
 
@@ -52,7 +66,7 @@ class DataEntry:
                                 "255, 255); } "
         self.propertyLineEdit.textChanged.connect(self.normal_style)
 
-    def errorDetected(self):
+    def error_detected(self):
         self.propertyLineEdit.setStyleSheet(self.errorStyleSheet)
         self.inError = True
 
@@ -130,30 +144,35 @@ class DataEntryCombo:
         self.propertyTitle.setText(title)
 
 
-class MyWidget(QtWidgets.QWidget):
-    def __init__(self, button, callback):
-        QtWidgets.QWidget.__init__(self)
-        button.clicked.connect(callback)
+class OutputGraphics(QMainWindow):
+
+    def __init__(self, x_values, y_values, x_title, y_title):
+        QMainWindow.__init__(self)
+        loadUi("probandofront.ui", self)
+
+        self.setWindowTitle("Salida")
+        self.xTitle = x_title
+        self.yTitle = y_title
+        self.xValues = x_values
+        self.yValues = y_values
+        self.graphicateButton.clicked.connect(self.update_graph)
+        self.addToolBar(NavigationToolbar(self.GraphWidget.canvas, self))
+
+    def update_graph(self):
+        self.GraphWidget.canvas.axes.clear()
+        self.GraphWidget.canvas.axes.plot(self.xValues, self.yValues)
+        self.GraphWidget.canvas.axes.xaxis.set_major_locator(MaxNLocator(integer=True))
+        self.GraphWidget.canvas.axes.set_xlabel(self.xTitle)
+        self.GraphWidget.canvas.axes.set_ylabel(self.yTitle)
+        self.GraphWidget.canvas.axes.set_title('Señal de salida')
+        self.GraphWidget.canvas.draw()
 
 
 if __name__ == "__main__":
     app = QtWidgets.QApplication([])
-
-    dig = uic.loadUi("filter.ui")
-
-    parameters1 = DataEntry(dig.editProperty1, dig.titleProperty1)
-    parameters1.set_property_title("Primer cero")
-    parameters1.show_all()
-    parameters1.delete_text()
-    parameters1.errorDetected()
-
-    parameters2 = DataEntry(dig.editProperty2, dig.titleProperty2)
-    parameters2.set_property_title("Segundo cero")
-
-    parameters3 = DataEntry(dig.editProperty3, dig.titleProperty3)
-    parameters3.hide_all()
-
-    dig.okButton.clicked.connect(parameters1.delete_text)
-
-    dig.show()
+    a = [10, 20, 30, 40, 75, 95, 120]
+    b = [60, 70, 80, 90, 65, 88, 77]
+    window = OutputGraphics(a, b, 'Valores x', 'Valores y')
+    window.show()
     app.exec()
+
