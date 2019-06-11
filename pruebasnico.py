@@ -17,12 +17,11 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
     def __init__(self, backend, *args, **kwargs):
         QtWidgets.QMainWindow.__init__(self, *args, **kwargs)
         self.setupUi(self)
-        #setear todos los callbacks de botones
         self.backend = backend
-        self.inputWindow = InputDialog(backend.signals, self)
+        self.inputWindow = InputDialog(backend.signals, self)               #crea los popus
         self.filterWindow = FilterDialog(backend.filters, self)
         self.outputWindow = OutputDialog(backend.outputConfigs, self)
-        self.inputSelectButton.clicked.connect(self.clicked_input)
+        self.inputSelectButton.clicked.connect(self.clicked_input)          #callbacks de botones
         self.filterSelectButton.clicked.connect(self.clicked_filter)
         self.outputConfigButton.clicked.connect(self.clicked_output)
         self.graphicateButton.clicked.connect(self.graphicate)
@@ -99,7 +98,7 @@ class InputDialog(AbstractDialog, Ui_Input):
                     self.done = True
                     break
                 else:
-                    self.dataentries[i].error()
+                    self.dataentries[i].errorDetected()
 
     #devuelve las properties del elemento seleccionado
     def get_data(self):
@@ -159,7 +158,7 @@ class FilterDialog(AbstractDialog, Ui_Filter):
                     self.mainWindow.update()
                     break
                 else:
-                    self.dataentries[i].error()
+                    self.dataentries[i].errorDetected()
 
     # devuelve las properties del elemento seleccionado
     def get_data(self):
@@ -216,7 +215,7 @@ class OutputDialog(AbstractDialog, Ui_Output):
                     self.mainWindow.update()
                     break
                 else:
-                    self.dataentries[i].error()
+                    self.dataentries[i].errorDetected()
 
     #devuelve las properties del elemento seleccionado
     def get_data(self):
