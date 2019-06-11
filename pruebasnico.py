@@ -118,6 +118,7 @@ class InputDialog(AbstractDialog, Ui_Input):
                     break
         return ret
 
+
 class FilterDialog(AbstractDialog, Ui_Filter):
     def __init__(self, all_filters, main_window, *args, **kwargs):
         AbstractDialog.__init__(self, main_window, *args, **kwargs)

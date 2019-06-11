@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="59df4d25-0958-402e-8b39-127fabf2e79e" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pruebasnico.py" beforeDir="false" afterPath="$PROJECT_DIR$/pruebasnico.py" afterDir="false" />
-    </list>
+    <list default="true" id="59df4d25-0958-402e-8b39-127fabf2e79e" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,8 +14,8 @@
         <entry file="file://$PROJECT_DIR$/pruebasnico.py">
           <provider selected="true" editor-type-id="live-pycharm">
             <state>
-              <first_editor relative-caret-position="96">
-                <caret line="92" selection-start-line="92" selection-end-line="92" />
+              <first_editor relative-caret-position="170">
+                <caret line="120" column="12" selection-start-line="120" selection-start-column="12" selection-end-line="120" selection-end-column="12" />
                 <folding>
                   <element signature="e#0#25#0" expanded="true" />
                 </folding>
@@ -284,12 +280,18 @@
       <option name="project" value="LOCAL" />
       <updated>1560195908808</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="hay que debuggear">
+      <created>1560269401194</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1560269401194</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25372022" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -297,7 +299,7 @@
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4955357" weight="0.39443535" />
-      <window_info active="true" anchor="bottom" id="Debug" order="3" sideWeight="0.49627978" visible="true" weight="0.45008183" />
+      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49627978" weight="0.45008183" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -361,7 +363,8 @@
     <MESSAGE value="no quiere" />
     <MESSAGE value="cruzo dedos" />
     <MESSAGE value="COMPILA" />
-    <option name="LAST_COMMIT_MESSAGE" value="COMPILA" />
+    <MESSAGE value="hay que debuggear" />
+    <option name="LAST_COMMIT_MESSAGE" value="hay que debuggear" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -415,8 +418,8 @@
     <entry file="file://$PROJECT_DIR$/pruebasnico.py">
       <provider selected="true" editor-type-id="live-pycharm">
         <state>
-          <first_editor relative-caret-position="96">
-            <caret line="92" selection-start-line="92" selection-end-line="92" />
+          <first_editor relative-caret-position="170">
+            <caret line="120" column="12" selection-start-line="120" selection-start-column="12" selection-end-line="120" selection-end-column="12" />
             <folding>
               <element signature="e#0#25#0" expanded="true" />
             </folding>
