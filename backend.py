@@ -13,6 +13,10 @@ class Signal:
     def get_properties(self):
         return self.properties
 
+    def validate(self):
+        return False
+
+
 class Filter:
     def __init__(self, name):
         self.properties = {"wo": 0, "K": 0}
@@ -21,6 +25,10 @@ class Filter:
     def get_properties(self):
         return self.properties
 
+    def validate(self):
+        return True
+
+
 class OutputConfig:
     def __init__(self, name):
         self.properties = {"Bode": 0, "K": 0}
@@ -28,3 +36,7 @@ class OutputConfig:
 
     def get_properties(self):
         return self.properties
+
+    def validate(self):
+        return True
+
