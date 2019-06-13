@@ -1,4 +1,5 @@
 import sys
+from enum import Enum
 
 from PyQt5 import QtWidgets, uic
 from PyQt5.QtGui import QDoubleValidator
@@ -145,33 +146,91 @@ class DataEntryCombo:
 
 class OutputGraphics(QMainWindow):
 
-    def __init__(self, x_values, y_values, x_title, y_title):
+    def __init__(self, graphics_properties):
         QMainWindow.__init__(self)
         loadUi("probandofront.ui", self)
-
         self.setWindowTitle("Salida")
-        self.xTitle = x_title
-        self.yTitle = y_title
-        self.xValues = x_values
-        self.yValues = y_values
+        self.graphics = graphics_properties
+        self.nextGraphicToShow = None
+        self.graphCounter = 0
+        self.maxIndex = None
+
+        if isinstance(graphics_properties, GraphicProperties):
+            self.nextGraphicToShow = graphics_properties
+            self.prevGraphicButton.hide()
+            self.nextGraphicButton.hide()
+
+        elif isinstance(graphics_properties, list):
+            self.maxIndex = len(graphics_properties)-1
+            self.prevGraphicButton.show()
+            self.nextGraphicButton.show()
+            self.nextGraphicToShow = graphics_properties[0]
+            self.prevGraphicButton.clicked.connect(self.previous_graph)
+            self.nextGraphicButton.clicked.connect(self.next_graph)
+            self.check_counter()
+
         self.graphicateButton.clicked.connect(self.update_graph)
+        self.update_graph()
         self.addToolBar(NavigationToolbar(self.GraphWidget.canvas, self))
+
+    def previous_graph(self):
+        self.graphCounter -= 1
+        self.nextGraphicToShow = self.graphics[self.graphCounter]
+        self.check_counter()
+        self.update_graph()
+
+    def next_graph(self):
+        self.graphCounter += 1
+        self.nextGraphicToShow = self.graphics[self.graphCounter]
+        self.check_counter()
+        self.update_graph()
+
+    def check_counter(self):
+        if self.graphCounter == 0:
+            self.prevGraphicButton.hide()
+        else:
+            self.prevGraphicButton.show()
+
+        if self.graphCounter == self.maxIndex:
+            self.nextGraphicButton.hide()
+        else:
+            self.nextGraphicButton.show()
 
     def update_graph(self):
         self.GraphWidget.canvas.axes.clear()
-        self.GraphWidget.canvas.axes.plot(self.xValues, self.yValues)
+        self.GraphWidget.canvas.axes.plot(self.nextGraphicToShow.xValueArray, self.nextGraphicToShow.yValueArray)
         self.GraphWidget.canvas.axes.xaxis.set_major_locator(MaxNLocator(integer=True))
-        self.GraphWidget.canvas.axes.set_xlabel(self.xTitle)
-        self.GraphWidget.canvas.axes.set_ylabel(self.yTitle)
-        self.GraphWidget.canvas.axes.set_title('Señal de salida')
+        self.GraphWidget.canvas.axes.set_xlabel(self.nextGraphicToShow.xTitle)
+        self.GraphWidget.canvas.axes.set_ylabel(self.nextGraphicToShow.yTitle)
+        self.GraphWidget.canvas.axes.set_title(self.nextGraphicToShow.title)
         self.GraphWidget.canvas.draw()
+
+
+class GraphicProperties:
+    def __init__(self, title, x_title, y_title, x_value_array, y_value_array, graphic_type):
+        self.title = title
+        self.xValueArray = x_value_array
+        self.yValueArray = y_value_array
+        self.graphicType = graphic_type
+        self.xTitle = x_title
+        self.yTitle = y_title
+
+
+class GraphicTypes(Enum):
+    BODE = 0
+    LINEAL = 1
 
 
 if __name__ == "__main__":
     app = QtWidgets.QApplication([])
     a = [10, 20, 30, 40, 75, 95, 120]
     b = [60, 70, 80, 90, 65, 88, 77]
-    window = OutputGraphics(a, b, 'Valores x', 'Valores y')
+    c = [10, 50, 80, 99, 120, 180, 222]
+    d = [20, 45, 88, 100, 151, 174, 188]
+    graphic1 = GraphicProperties("Salida 1" , "Valores x", "Valores y", a, b, GraphicTypes.LINEAL)
+    graphic2 = GraphicProperties("Salida 2", "Valores x", "Valores y", c, d, GraphicTypes.LINEAL)
+
+    graphics = [graphic1, graphic2]
+    window = OutputGraphics(graphics)
     window.show()
     app.exec()
-
