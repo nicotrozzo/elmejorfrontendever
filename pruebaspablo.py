@@ -100,7 +100,6 @@ class DataEntry:
         return self.userInputValue
 
     def set_only_numbers(self, accept_only_numbers):
-        self.onlyNumbers = accept_only_numbers
         if accept_only_numbers:
             validator = QDoubleValidator()
             self.propertyLineEdit.setValidator(validator)
