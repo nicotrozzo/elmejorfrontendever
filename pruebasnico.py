@@ -23,7 +23,7 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         self.outputWindow = OutputDialog(backend.outputConfigs, self)
         self.inputSelectButton.clicked.connect(self.clicked_input)          #callbacks de botones
         self.filterSelectButton.clicked.connect(self.clicked_filter)
-        self.outputConfigButton.clicked.connect(self.clicked_output)
+        self.outputConfigBurtton.clicked.connect(self.clicked_output)
         self.graphicateButton.clicked.connect(self.graphicate)
 
     def clicked_input(self):

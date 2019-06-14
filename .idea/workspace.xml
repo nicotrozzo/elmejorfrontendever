@@ -3,7 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="59df4d25-0958-402e-8b39-127fabf2e79e" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pruebaspablo.py" beforeDir="false" afterPath="$PROJECT_DIR$/pruebaspablo.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/probandofront.ui" beforeDir="false" afterPath="$PROJECT_DIR$/probandofront.ui" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pruebasnico.py" beforeDir="false" afterPath="$PROJECT_DIR$/pruebasnico.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -14,28 +15,14 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/pruebaspablo.py">
+        <entry file="file://$PROJECT_DIR$/pruebasnico.py">
           <provider selected="true" editor-type-id="live-pycharm">
             <state>
-              <first_editor relative-caret-position="225">
-                <caret line="206" column="46" lean-forward="true" selection-start-line="206" selection-start-column="46" selection-end-line="206" selection-end-column="46" />
+              <first_editor relative-caret-position="288">
+                <caret line="26" column="62" lean-forward="true" selection-start-line="26" selection-start-column="62" selection-end-line="26" selection-end-column="62" />
                 <folding>
-                  <element signature="e#0#10#0" expanded="true" />
+                  <element signature="e#0#25#0" expanded="true" />
                 </folding>
-              </first_editor>
-              <second_editor relative-caret-position="-102">
-                <caret line="1" selection-start-line="1" selection-end-line="1" />
-              </second_editor>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://D:/Program Files/Python/Lib/site-packages/matplotlib/lines.py">
-          <provider selected="true" editor-type-id="live-pycharm">
-            <state>
-              <first_editor relative-caret-position="179">
-                <caret line="197" selection-start-line="197" selection-end-line="197" />
               </first_editor>
               <second_editor relative-caret-position="-119" />
             </state>
@@ -43,95 +30,27 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/output_ui.py">
+        <entry file="file://$PROJECT_DIR$/pruebaspablo.py">
           <provider selected="true" editor-type-id="live-pycharm">
             <state>
-              <first_editor />
-              <second_editor />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://D:/Program Files/Python/Lib/site-packages/matplotlib/legend.py">
-          <provider selected="true" editor-type-id="live-pycharm">
-            <state>
-              <first_editor relative-caret-position="16235">
-                <caret line="977" column="8" selection-start-line="977" selection-start-column="8" selection-end-line="977" selection-end-column="8" />
-              </first_editor>
-              <second_editor />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/graphwidget.py">
-          <provider selected="true" editor-type-id="live-pycharm">
-            <state>
-              <first_editor relative-caret-position="289">
-                <caret line="17" selection-start-line="17" selection-end-line="17" />
+              <first_editor relative-caret-position="816">
+                <caret line="56" column="34" selection-start-line="56" selection-start-column="34" selection-end-line="56" selection-end-column="34" />
                 <folding>
-                  <element signature="e#171#199#0" expanded="true" />
+                  <element signature="e#0#10#0" expanded="true" />
                 </folding>
               </first_editor>
-              <second_editor />
+              <second_editor relative-caret-position="-119" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://D:/Program Files/Python/Lib/site-packages/PyQt5/uic/Loader/qobjectcreator.py">
+        <entry file="file://$PROJECT_DIR$/backend.py">
           <provider selected="true" editor-type-id="live-pycharm">
             <state>
-              <first_editor relative-caret-position="1989">
-                <caret line="119" selection-start-line="119" selection-end-line="119" />
+              <first_editor relative-caret-position="136">
+                <caret line="8" column="19" selection-start-line="8" selection-start-column="19" selection-end-line="8" selection-end-column="19" />
               </first_editor>
-              <second_editor />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://D:/Program Files/Python/Lib/site-packages/matplotlib/axes/_base.py">
-          <provider selected="true" editor-type-id="live-pycharm">
-            <state>
-              <first_editor relative-caret-position="1343">
-                <caret line="105" selection-start-line="105" selection-end-line="105" />
-              </first_editor>
-              <second_editor />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://D:/Program Files/Python/Lib/xml/etree/ElementTree.py">
-          <provider selected="true" editor-type-id="live-pycharm">
-            <state>
-              <first_editor relative-caret-position="9979">
-                <caret line="595" column="78" selection-start-line="595" selection-start-column="78" selection-end-line="595" selection-end-column="78" />
-              </first_editor>
-              <second_editor />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/frontend_ui.py">
-          <provider selected="true" editor-type-id="live-pycharm">
-            <state>
-              <first_editor relative-caret-position="374">
-                <caret line="22" column="75" selection-start-line="22" selection-start-column="75" selection-end-line="22" selection-end-column="75" />
-              </first_editor>
-              <second_editor />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/input_ui.py">
-          <provider selected="true" editor-type-id="live-pycharm">
-            <state>
-              <first_editor />
               <second_editor />
             </state>
           </provider>
@@ -184,7 +103,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -196,6 +114,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -404,20 +323,20 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1550" height="838" extended-state="7" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2001321" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25297618" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32956153" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.4969743" visible="true" weight="0.20509194" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4969743" weight="0.20509194" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3550212" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Version Control" order="7" sideWeight="0.49925596" weight="0.291372" />
+      <window_info active="true" anchor="bottom" id="Version Control" order="7" sideWeight="0.49925596" visible="true" weight="0.291372" />
       <window_info anchor="bottom" id="Terminal" order="8" sideWeight="0.49925596" weight="0.3289689" />
       <window_info anchor="bottom" id="Python Console" order="9" sideWeight="0.49925596" weight="0.3289689" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5030257" side_tool="true" weight="0.39443535" />
@@ -496,51 +415,27 @@
     <entry file="file://$PROJECT_DIR$/backend.py">
       <provider selected="true" editor-type-id="live-pycharm">
         <state>
-          <first_editor relative-caret-position="85">
-            <caret line="5" selection-start-line="5" selection-end-line="5" />
+          <first_editor relative-caret-position="136">
+            <caret line="8" column="19" selection-start-line="8" selection-start-column="19" selection-end-line="8" selection-end-column="19" />
           </first_editor>
           <second_editor />
         </state>
       </provider>
     </entry>
-    <entry file="file://D:/Program Files/Python/Lib/site-packages/PyQt5/uic/__init__.py">
-      <provider selected="true" editor-type-id="live-pycharm">
-        <state>
-          <first_editor relative-caret-position="3825">
-            <caret line="225" selection-start-line="225" selection-end-line="225" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://D:/Program Files/Python/Lib/site-packages/PyQt5/uic/__init__.py" />
     <entry file="file://$PROJECT_DIR$/mplwidget.py" />
-    <entry file="file://D:/Program Files/Python/Lib/site-packages/PyQt5/uic/Loader/loader.py">
-      <provider selected="true" editor-type-id="live-pycharm">
-        <state>
-          <first_editor relative-caret-position="1122">
-            <caret line="71" selection-start-line="71" selection-end-line="71" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://D:/Program Files/Python/Lib/site-packages/PyQt5/uic/uiparser.py">
-      <provider selected="true" editor-type-id="live-pycharm">
-        <state>
-          <first_editor relative-caret-position="17085">
-            <caret line="1012" selection-start-line="1012" selection-end-line="1012" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://D:/Program Files/Python/Lib/site-packages/PyQt5/uic/Loader/loader.py" />
+    <entry file="file://D:/Program Files/Python/Lib/site-packages/PyQt5/uic/uiparser.py" />
     <entry file="file://$PROJECT_DIR$/pruebasnico.py">
       <provider selected="true" editor-type-id="live-pycharm">
         <state>
-          <first_editor relative-caret-position="3961">
-            <caret line="245" column="23" selection-start-line="245" selection-start-column="13" selection-end-line="245" selection-end-column="23" />
+          <first_editor relative-caret-position="288">
+            <caret line="26" column="62" lean-forward="true" selection-start-line="26" selection-start-column="62" selection-end-line="26" selection-end-column="62" />
+            <folding>
+              <element signature="e#0#25#0" expanded="true" />
+            </folding>
           </first_editor>
-          <second_editor />
+          <second_editor relative-caret-position="-119" />
         </state>
       </provider>
     </entry>
@@ -552,46 +447,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://D:/Program Files/Python/Lib/site-packages/matplotlib/legend.py">
-      <provider selected="true" editor-type-id="live-pycharm">
-        <state>
-          <first_editor relative-caret-position="16235">
-            <caret line="977" column="8" selection-start-line="977" selection-start-column="8" selection-end-line="977" selection-end-column="8" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://D:/Program Files/Python/Lib/site-packages/PyQt5/uic/Loader/qobjectcreator.py">
-      <provider selected="true" editor-type-id="live-pycharm">
-        <state>
-          <first_editor relative-caret-position="1989">
-            <caret line="119" selection-start-line="119" selection-end-line="119" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://D:/Program Files/Python/Lib/site-packages/matplotlib/axes/_base.py">
-      <provider selected="true" editor-type-id="live-pycharm">
-        <state>
-          <first_editor relative-caret-position="1343">
-            <caret line="105" selection-start-line="105" selection-end-line="105" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://D:/Program Files/Python/Lib/xml/etree/ElementTree.py">
-      <provider selected="true" editor-type-id="live-pycharm">
-        <state>
-          <first_editor relative-caret-position="9979">
-            <caret line="595" column="78" selection-start-line="595" selection-start-column="78" selection-end-line="595" selection-end-column="78" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://D:/Program Files/Python/Lib/site-packages/matplotlib/legend.py" />
+    <entry file="file://D:/Program Files/Python/Lib/site-packages/PyQt5/uic/Loader/qobjectcreator.py" />
+    <entry file="file://D:/Program Files/Python/Lib/site-packages/matplotlib/axes/_base.py" />
+    <entry file="file://D:/Program Files/Python/Lib/xml/etree/ElementTree.py" />
     <entry file="file://$PROJECT_DIR$/frontend_ui.py">
       <provider selected="true" editor-type-id="live-pycharm">
         <state>
@@ -610,16 +469,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://D:/Program Files/Python/Lib/site-packages/matplotlib/lines.py">
-      <provider selected="true" editor-type-id="live-pycharm">
-        <state>
-          <first_editor relative-caret-position="179">
-            <caret line="197" selection-start-line="197" selection-end-line="197" />
-          </first_editor>
-          <second_editor relative-caret-position="-119" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://D:/Program Files/Python/Lib/site-packages/matplotlib/lines.py" />
     <entry file="file://$PROJECT_DIR$/graphwidget.py">
       <provider selected="true" editor-type-id="live-pycharm">
         <state>
@@ -636,15 +486,13 @@
     <entry file="file://$PROJECT_DIR$/pruebaspablo.py">
       <provider selected="true" editor-type-id="live-pycharm">
         <state>
-          <first_editor relative-caret-position="225">
-            <caret line="206" column="46" lean-forward="true" selection-start-line="206" selection-start-column="46" selection-end-line="206" selection-end-column="46" />
+          <first_editor relative-caret-position="816">
+            <caret line="56" column="34" selection-start-line="56" selection-start-column="34" selection-end-line="56" selection-end-column="34" />
             <folding>
               <element signature="e#0#10#0" expanded="true" />
             </folding>
           </first_editor>
-          <second_editor relative-caret-position="-102">
-            <caret line="1" selection-start-line="1" selection-end-line="1" />
-          </second_editor>
+          <second_editor relative-caret-position="-119" />
         </state>
       </provider>
     </entry>
