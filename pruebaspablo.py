@@ -220,19 +220,24 @@ class OutputGraphics(QMainWindow):
             self.GraphWidget.canvas.draw()
 
         elif self.nextGraphicToShow.graphicType == GraphicTypes.CERO_POLES:
+            i=0
 
 
 
 ##Clase GraphicProperties
-#Se utiliza para unificar las
+#Se utiliza para unificar las propiedades de los graficos a mostrar.
+#En el caso de graficos de POLOS y CEROS:
+#                   Utilizar x_value_array para los valores de x de los polos.
+#                   Utilizar y_value_array para los valores de y de los polos.
 class GraphicProperties:
-    def __init__(self, title, x_title, y_title, x_value_array, y_value_array, graphic_type, ceros_x_values):
+    def __init__(self, title, x_title, y_title, x_value_array, y_value_array, graphic_type, ceros_x_values = None):
         self.title = title
         self.xValueArray = x_value_array
         self.yValueArray = y_value_array
         self.graphicType = graphic_type
         self.xTitle = x_title
         self.yTitle = y_title
+        self.cerosXValues = ceros_x_values
 
 
 class GraphicTypes(Enum):
