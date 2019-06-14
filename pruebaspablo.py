@@ -203,9 +203,9 @@ class OutputGraphics(QMainWindow):
 
             markers_on = [60, -70, 80, 90, 65, 88, 77]
 
-            #self.GraphWidget.canvas.axes.plot(self.nextGraphicToShow.xValueArray, self.nextGraphicToShow.yValueArray,
-                                            #  '-gD', markevery=markers_on)
-            #self.GraphWidget.canvas.axes.xaxis.set_major_locator(MaxNLocator(integer=True))
+            self.GraphWidget.canvas.axes.plot(self.nextGraphicToShow.xValueArray, self.nextGraphicToShow.yValueArray)
+            self.GraphWidget.canvas.axes.scatter(10, 30, mec='g', markersize=12, marker='x')
+            self.GraphWidget.canvas.axes.xaxis.set_major_locator(MaxNLocator(integer=True))
             self.GraphWidget.canvas.axes.set_xlabel(self.nextGraphicToShow.xTitle)
             self.GraphWidget.canvas.axes.set_ylabel(self.nextGraphicToShow.yTitle)
             self.GraphWidget.canvas.axes.set_title(self.nextGraphicToShow.title)
@@ -219,9 +219,14 @@ class OutputGraphics(QMainWindow):
             self.GraphWidget.canvas.axes.set_title(self.nextGraphicToShow.title)
             self.GraphWidget.canvas.draw()
 
+        elif self.nextGraphicToShow.graphicType == GraphicTypes.CERO_POLES:
 
+
+
+##Clase GraphicProperties
+#Se utiliza para unificar las
 class GraphicProperties:
-    def __init__(self, title, x_title, y_title, x_value_array, y_value_array, graphic_type):
+    def __init__(self, title, x_title, y_title, x_value_array, y_value_array, graphic_type, ceros_x_values):
         self.title = title
         self.xValueArray = x_value_array
         self.yValueArray = y_value_array
@@ -233,6 +238,7 @@ class GraphicProperties:
 class GraphicTypes(Enum):
     BODE = 0
     LINEAL = 1
+    CERO_POLES = 2
 
 
 if __name__ == "__main__":
