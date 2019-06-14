@@ -16,12 +16,15 @@
   <property name="autoFillBackground">
    <bool>false</bool>
   </property>
+  <property name="styleSheet">
+   <string notr="true">background:rgb(238,238,238)</string>
+  </property>
   <widget class="QLabel" name="label">
    <property name="geometry">
     <rect>
-     <x>0</x>
-     <y>20</y>
-     <width>731</width>
+     <x>10</x>
+     <y>10</y>
+     <width>701</width>
      <height>91</height>
     </rect>
    </property>
@@ -31,6 +34,11 @@
      <weight>75</weight>
      <bold>true</bold>
     </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background: rgb(52,73,85);
+color:rgb(255,255,255);
+border-radius: 10px;</string>
    </property>
    <property name="text">
     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; color:#ff0000;&quot;&gt;SELECCIÓN DE ENTRADA&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
@@ -235,6 +243,11 @@
    </property>
    <property name="autoFillBackground">
     <bool>false</bool>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background: rgb(52,73,85);
+color:rgb(255,255,255);
+border-radius: 10px;</string>
    </property>
    <property name="text">
     <string>OK</string>
