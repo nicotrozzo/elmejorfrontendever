@@ -13,13 +13,17 @@ class Ui_Output(object):
         Output.setObjectName("Output")
         Output.resize(727, 529)
         Output.setAutoFillBackground(False)
+        Output.setStyleSheet("background:rgb(238,238,238)")
         self.label = QtWidgets.QLabel(Output)
-        self.label.setGeometry(QtCore.QRect(0, 20, 721, 91))
+        self.label.setGeometry(QtCore.QRect(10, 20, 701, 81))
         font = QtGui.QFont()
         font.setPointSize(18)
         font.setBold(True)
         font.setWeight(75)
         self.label.setFont(font)
+        self.label.setStyleSheet("background: rgb(52,73,85);\n"
+"color:rgb(255,255,255);\n"
+"border-radius: 10px;")
         self.label.setTextFormat(QtCore.Qt.AutoText)
         self.label.setAlignment(QtCore.Qt.AlignCenter)
         self.label.setObjectName("label")
@@ -57,6 +61,9 @@ class Ui_Output(object):
         font.setWeight(75)
         self.okButton.setFont(font)
         self.okButton.setAutoFillBackground(False)
+        self.okButton.setStyleSheet("background: rgb(52,73,85);\n"
+"color:rgb(255,255,255);\n"
+"border-radius: 10px;")
         self.okButton.setObjectName("okButton")
         self.comboProperty1 = QtWidgets.QComboBox(Output)
         self.comboProperty1.setGeometry(QtCore.QRect(330, 290, 151, 22))

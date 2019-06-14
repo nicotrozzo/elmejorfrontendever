@@ -1,4 +1,5 @@
-from frontend_ui import *
+from probandofront_ui import *
+#from frontend_ui import *
 from input_ui import *
 from filter_ui import *
 from output_ui import *
@@ -23,7 +24,7 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         self.outputWindow = OutputDialog(backend.outputConfigs, self)
         self.inputSelectButton.clicked.connect(self.clicked_input)          #callbacks de botones
         self.filterSelectButton.clicked.connect(self.clicked_filter)
-        self.outputConfigBurtton.clicked.connect(self.clicked_output)
+        self.outputConfigButton.clicked.connect(self.clicked_output)
         self.graphicateButton.clicked.connect(self.graphicate)
 
     def clicked_input(self):
@@ -79,7 +80,9 @@ class InputDialog(AbstractDialog, Ui_Input):
         for sig in self.signals:
             if sig.name.lower() == self.inputComboBox.currentText().lower():
                 i = 0
-                for key in sig.get_properties():
+                keys = list(sig.get_properties().keys())
+                keys.sort() #ordena todas las keys
+                for key in keys:
                     self.dataentries[i].show_all()
                     self.dataentries[i].set_property_title(key)
                     i += 1
