@@ -13,13 +13,17 @@ class Ui_Filter(object):
         Filter.setObjectName("Filter")
         Filter.resize(727, 528)
         Filter.setAutoFillBackground(False)
+        Filter.setStyleSheet("background:rgb(238,238,238)")
         self.label = QtWidgets.QLabel(Filter)
-        self.label.setGeometry(QtCore.QRect(0, 20, 731, 91))
+        self.label.setGeometry(QtCore.QRect(20, 10, 681, 81))
         font = QtGui.QFont()
         font.setPointSize(18)
         font.setBold(True)
         font.setWeight(75)
         self.label.setFont(font)
+        self.label.setStyleSheet("background: rgb(52,73,85);\n"
+"color:rgb(255,255,255);\n"
+"border-radius: 10px;")
         self.label.setTextFormat(QtCore.Qt.AutoText)
         self.label.setAlignment(QtCore.Qt.AlignCenter)
         self.label.setObjectName("label")
@@ -78,6 +82,9 @@ class Ui_Filter(object):
         font.setWeight(75)
         self.okButton.setFont(font)
         self.okButton.setAutoFillBackground(False)
+        self.okButton.setStyleSheet("background: rgb(52,73,85);\n"
+"color:rgb(255,255,255);\n"
+"border-radius: 10px;")
         self.okButton.setObjectName("okButton")
 
         self.retranslateUi(Filter)
