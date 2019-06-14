@@ -201,10 +201,10 @@ class OutputGraphics(QMainWindow):
 
         if self.nextGraphicToShow.graphicType == GraphicTypes.LINEAL:
 
-            #markers_on = [60, -70, 80, 90, 65, 88, 77]
+            markers_on = [60, -70, 80, 90, 65, 88, 77]
 
-            #self.GraphWidget.canvas.axes.plot(self.nextGraphicToShow.xValueArray, self.nextGraphicToShow.yValueArray,
-                                              #'-gD', markevery=markers_on)
+            self.GraphWidget.canvas.axes.plot(self.nextGraphicToShow.xValueArray, self.nextGraphicToShow.yValueArray,
+                                              '-gD', markevery=markers_on)
             self.GraphWidget.canvas.axes.xaxis.set_major_locator(MaxNLocator(integer=True))
             self.GraphWidget.canvas.axes.set_xlabel(self.nextGraphicToShow.xTitle)
             self.GraphWidget.canvas.axes.set_ylabel(self.nextGraphicToShow.yTitle)

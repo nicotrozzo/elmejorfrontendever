@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="59df4d25-0958-402e-8b39-127fabf2e79e" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pruebaspablo.py" beforeDir="false" afterPath="$PROJECT_DIR$/pruebaspablo.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -12,33 +13,31 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pruebasnico.py">
-          <provider selected="true" editor-type-id="live-pycharm">
-            <state>
-              <first_editor relative-caret-position="3961">
-                <caret line="245" column="23" selection-start-line="245" selection-start-column="13" selection-end-line="245" selection-end-column="23" />
-              </first_editor>
-              <second_editor />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/pruebaspablo.py">
           <provider selected="true" editor-type-id="live-pycharm">
             <state>
-              <first_editor relative-caret-position="183">
-                <caret line="214" column="29" lean-forward="true" selection-start-line="146" selection-start-column="6" selection-end-line="146" selection-end-column="20" />
+              <first_editor relative-caret-position="225">
+                <caret line="206" column="46" lean-forward="true" selection-start-line="206" selection-start-column="46" selection-end-line="206" selection-end-column="46" />
                 <folding>
                   <element signature="e#0#10#0" expanded="true" />
-                  <element signature="e#1565#3511#0" />
-                  <element signature="e#3603#4434#0" />
                 </folding>
               </first_editor>
               <second_editor relative-caret-position="-102">
                 <caret line="1" selection-start-line="1" selection-end-line="1" />
               </second_editor>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://D:/Program Files/Python/Lib/site-packages/matplotlib/lines.py">
+          <provider selected="true" editor-type-id="live-pycharm">
+            <state>
+              <first_editor relative-caret-position="179">
+                <caret line="197" selection-start-line="197" selection-end-line="197" />
+              </first_editor>
+              <second_editor relative-caret-position="-119" />
             </state>
           </provider>
         </entry>
@@ -132,8 +131,8 @@
         <entry file="file://$PROJECT_DIR$/input_ui.py">
           <provider selected="true" editor-type-id="live-pycharm">
             <state>
-              <first_editor relative-caret-position="-973" />
-              <second_editor relative-caret-position="-119" />
+              <first_editor />
+              <second_editor />
             </state>
           </provider>
         </entry>
@@ -380,23 +379,45 @@
       <option name="project" value="LOCAL" />
       <updated>1560393277519</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary=".uis">
+      <created>1560518123256</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1560518123257</updated>
+    </task>
+    <task id="LOCAL-00016" summary="update">
+      <created>1560519742410</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1560519742410</updated>
+    </task>
+    <task id="LOCAL-00017" summary="update">
+      <created>1560519755657</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1560519755657</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+    <frame x="-7" y="-7" width="1550" height="838" extended-state="7" />
+    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2001321" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32956153" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4969743" weight="0.20509194" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.4969743" visible="true" weight="0.20509194" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3550212" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Version Control" order="7" sideWeight="0.49925596" weight="0.4680851" />
+      <window_info anchor="bottom" id="Version Control" order="7" sideWeight="0.49925596" weight="0.291372" />
       <window_info anchor="bottom" id="Terminal" order="8" sideWeight="0.49925596" weight="0.3289689" />
       <window_info anchor="bottom" id="Python Console" order="9" sideWeight="0.49925596" weight="0.3289689" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5030257" side_tool="true" weight="0.39443535" />
@@ -458,7 +479,9 @@
     <MESSAGE value="graficos" />
     <MESSAGE value="boludeces" />
     <MESSAGE value="multiple graphics" />
-    <option name="LAST_COMMIT_MESSAGE" value="multiple graphics" />
+    <MESSAGE value=".uis" />
+    <MESSAGE value="update" />
+    <option name="LAST_COMMIT_MESSAGE" value="update" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/scratch_2.py" />
@@ -569,14 +592,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/input_ui.py">
-      <provider selected="true" editor-type-id="live-pycharm">
-        <state>
-          <first_editor relative-caret-position="-973" />
-          <second_editor relative-caret-position="-119" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/frontend_ui.py">
       <provider selected="true" editor-type-id="live-pycharm">
         <state>
@@ -584,6 +599,24 @@
             <caret line="22" column="75" selection-start-line="22" selection-start-column="75" selection-end-line="22" selection-end-column="75" />
           </first_editor>
           <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/input_ui.py">
+      <provider selected="true" editor-type-id="live-pycharm">
+        <state>
+          <first_editor />
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://D:/Program Files/Python/Lib/site-packages/matplotlib/lines.py">
+      <provider selected="true" editor-type-id="live-pycharm">
+        <state>
+          <first_editor relative-caret-position="179">
+            <caret line="197" selection-start-line="197" selection-end-line="197" />
+          </first_editor>
+          <second_editor relative-caret-position="-119" />
         </state>
       </provider>
     </entry>
@@ -603,12 +636,10 @@
     <entry file="file://$PROJECT_DIR$/pruebaspablo.py">
       <provider selected="true" editor-type-id="live-pycharm">
         <state>
-          <first_editor relative-caret-position="183">
-            <caret line="214" column="29" lean-forward="true" selection-start-line="146" selection-start-column="6" selection-end-line="146" selection-end-column="20" />
+          <first_editor relative-caret-position="225">
+            <caret line="206" column="46" lean-forward="true" selection-start-line="206" selection-start-column="46" selection-end-line="206" selection-end-column="46" />
             <folding>
               <element signature="e#0#10#0" expanded="true" />
-              <element signature="e#1565#3511#0" />
-              <element signature="e#3603#4434#0" />
             </folding>
           </first_editor>
           <second_editor relative-caret-position="-102">
