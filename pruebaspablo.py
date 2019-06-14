@@ -161,7 +161,7 @@ class OutputGraphics(QMainWindow):
             self.nextGraphicButton.hide()
 
         elif isinstance(graphics_properties, list):
-            self.maxIndex = len(graphics_properties)-1
+            self.maxIndex = len(graphics_properties) - 1
             self.prevGraphicButton.show()
             self.nextGraphicButton.show()
             self.nextGraphicToShow = graphics_properties[0]
@@ -198,12 +198,26 @@ class OutputGraphics(QMainWindow):
 
     def update_graph(self):
         self.GraphWidget.canvas.axes.clear()
-        self.GraphWidget.canvas.axes.plot(self.nextGraphicToShow.xValueArray, self.nextGraphicToShow.yValueArray)
-        self.GraphWidget.canvas.axes.xaxis.set_major_locator(MaxNLocator(integer=True))
-        self.GraphWidget.canvas.axes.set_xlabel(self.nextGraphicToShow.xTitle)
-        self.GraphWidget.canvas.axes.set_ylabel(self.nextGraphicToShow.yTitle)
-        self.GraphWidget.canvas.axes.set_title(self.nextGraphicToShow.title)
-        self.GraphWidget.canvas.draw()
+
+        if self.nextGraphicToShow.graphicType == GraphicTypes.LINEAL:
+
+            #markers_on = [60, -70, 80, 90, 65, 88, 77]
+
+            #self.GraphWidget.canvas.axes.plot(self.nextGraphicToShow.xValueArray, self.nextGraphicToShow.yValueArray,
+                                              '-gD', markevery=markers_on)
+            self.GraphWidget.canvas.axes.xaxis.set_major_locator(MaxNLocator(integer=True))
+            self.GraphWidget.canvas.axes.set_xlabel(self.nextGraphicToShow.xTitle)
+            self.GraphWidget.canvas.axes.set_ylabel(self.nextGraphicToShow.yTitle)
+            self.GraphWidget.canvas.axes.set_title(self.nextGraphicToShow.title)
+
+            self.GraphWidget.canvas.draw()
+        elif self.nextGraphicToShow.graphicType == GraphicTypes.BODE:
+            self.GraphWidget.canvas.axes.semilogx(self.nextGraphicToShow.xValueArray,
+                                                  self.nextGraphicToShow.yValueArray)
+            self.GraphWidget.canvas.axes.set_xlabel(self.nextGraphicToShow.xTitle)
+            self.GraphWidget.canvas.axes.set_ylabel(self.nextGraphicToShow.yTitle)
+            self.GraphWidget.canvas.axes.set_title(self.nextGraphicToShow.title)
+            self.GraphWidget.canvas.draw()
 
 
 class GraphicProperties:
@@ -224,10 +238,10 @@ class GraphicTypes(Enum):
 if __name__ == "__main__":
     app = QtWidgets.QApplication([])
     a = [10, 20, 30, 40, 75, 95, 120]
-    b = [60, 70, 80, 90, 65, 88, 77]
+    b = [60, -70, 80, 90, 65, 88, 77]
     c = [10, 50, 80, 99, 120, 180, 222]
-    d = [20, 45, 88, 100, 151, 174, 188]
-    graphic1 = GraphicProperties("Salida 1" , "Valores x", "Valores y", a, b, GraphicTypes.LINEAL)
+    d = [20, 45, -88, 100, -151, 174, 188]
+    graphic1 = GraphicProperties("Salida 1", "Valores x", "Valores y", a, b, GraphicTypes.LINEAL)
     graphic2 = GraphicProperties("Salida 2", "Valores x", "Valores y", c, d, GraphicTypes.LINEAL)
 
     graphics = [graphic1, graphic2]
