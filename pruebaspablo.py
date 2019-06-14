@@ -1,13 +1,9 @@
 import sys
 from enum import Enum
 
-from PyQt5 import QtWidgets, uic
+from PyQt5 import QtWidgets
 from PyQt5.QtGui import QDoubleValidator
-from PyQt5.QtWidgets import QLineEdit, QLabel, QComboBox, QMainWindow
-from PyQt5.uic import loadUi
-from matplotlib.ticker import MaxNLocator
 import matplotlib as mpl
-from mpl_toolkits.axisartist import SubplotZero
 
 from filter_ui import Ui_Filter
 from frontend_ui import Ui_MainWindow
@@ -17,13 +13,6 @@ from PyQt5.QtWidgets import *
 from PyQt5.uic import loadUi
 
 from matplotlib.backends.backend_qt5agg import (NavigationToolbar2QT as NavigationToolbar)
-
-import numpy as np
-import random
-
-from matplotlib.backends.backend_qt5agg import FigureCanvasAgg as FigureCanvas
-from matplotlib.figure import Figure
-import numpy as np
 
 
 class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
@@ -53,7 +42,7 @@ class FilterDialog(QtWidgets.QDialog, Ui_Filter):
     pass
 
 
-# Grupo de un LineEdit y un label (el titulo de la propiedad)
+# Class which links a LineEdit with a Label. The Label indicates the property title (Shown as a text next to it)
 class DataEntry:
     def __init__(self, line_edit, label):
         self.propertyTitle = label
@@ -200,8 +189,7 @@ class OutputGraphics(QMainWindow):
 
     def update_graph(self):
         self.GraphWidget.canvas.axes.clear()
-        self.fix_y_title_position()
-        self.fix_x_title_position()
+        self.fix_axes_titles_position()
         if self.nextGraphicToShow.graphicType == GraphicTypes.LINEAL:
 
             self.GraphWidget.canvas.axes.plot(self.nextGraphicToShow.xValueArray, self.nextGraphicToShow.yValueArray)
@@ -235,22 +223,24 @@ class OutputGraphics(QMainWindow):
                                                   color='black', markersize=10, marker='x')
 
             self.GraphWidget.canvas.axes.set_title(self.nextGraphicToShow.title)
-            self.fix_y_title_position()
-            self.fix_x_title_position()
             self.GraphWidget.canvas.axes.grid()
             self.GraphWidget.canvas.draw()
 
-    def fix_x_title_position(self):
+    def fix_axes_titles_position(self):
+        self.__fix_y_title_position__()
+        self.__fix_x_title_position__()
+
+    def __fix_x_title_position__(self):
         ticklabelpad = mpl.rcParams['xtick.major.pad']
         self.GraphWidget.canvas.axes.annotate(self.nextGraphicToShow.xTitle, xy=(1, 0), xytext=(0, -ticklabelpad),
                                               ha='left', va='top',
                                               xycoords='axes fraction', textcoords='offset points')
 
-    def fix_y_title_position(self):
+    def __fix_y_title_position__(self):
         ticklabelpad = mpl.rcParams['ytick.major.pad']
         self.GraphWidget.canvas.axes.annotate(self.nextGraphicToShow.yTitle, xy=(0, 1), xytext=(-50, -ticklabelpad),
                                               ha='left', va='top',
-                                              xycoords='axes fraction', textcoords='offset points', rotation= 90)
+                                              xycoords='axes fraction', textcoords='offset points', rotation=90)
 
 
 ##Class GraphicProperties
