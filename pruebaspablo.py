@@ -6,6 +6,8 @@ from PyQt5.QtGui import QDoubleValidator
 from PyQt5.QtWidgets import QLineEdit, QLabel, QComboBox, QMainWindow
 from PyQt5.uic import loadUi
 from matplotlib.ticker import MaxNLocator
+import matplotlib as mpl
+from mpl_toolkits.axisartist import SubplotZero
 
 from filter_ui import Ui_Filter
 from frontend_ui import Ui_MainWindow
@@ -198,62 +200,94 @@ class OutputGraphics(QMainWindow):
 
     def update_graph(self):
         self.GraphWidget.canvas.axes.clear()
-
+        self.fix_y_title_position()
+        self.fix_x_title_position()
         if self.nextGraphicToShow.graphicType == GraphicTypes.LINEAL:
 
-            markers_on = [60, -70, 80, 90, 65, 88, 77]
-
             self.GraphWidget.canvas.axes.plot(self.nextGraphicToShow.xValueArray, self.nextGraphicToShow.yValueArray)
-            self.GraphWidget.canvas.axes.scatter(10, 30, mec='g', markersize=12, marker='x')
-            self.GraphWidget.canvas.axes.xaxis.set_major_locator(MaxNLocator(integer=True))
-            self.GraphWidget.canvas.axes.set_xlabel(self.nextGraphicToShow.xTitle)
-            self.GraphWidget.canvas.axes.set_ylabel(self.nextGraphicToShow.yTitle)
             self.GraphWidget.canvas.axes.set_title(self.nextGraphicToShow.title)
-
+            self.GraphWidget.canvas.axes.grid()
             self.GraphWidget.canvas.draw()
+
         elif self.nextGraphicToShow.graphicType == GraphicTypes.BODE:
+
             self.GraphWidget.canvas.axes.semilogx(self.nextGraphicToShow.xValueArray,
                                                   self.nextGraphicToShow.yValueArray)
-            self.GraphWidget.canvas.axes.set_xlabel(self.nextGraphicToShow.xTitle)
-            self.GraphWidget.canvas.axes.set_ylabel(self.nextGraphicToShow.yTitle)
             self.GraphWidget.canvas.axes.set_title(self.nextGraphicToShow.title)
+            self.GraphWidget.canvas.axes.grid()
             self.GraphWidget.canvas.draw()
 
-        elif self.nextGraphicToShow.graphicType == GraphicTypes.CERO_POLES:
-            i=0
+        elif self.nextGraphicToShow.graphicType == GraphicTypes.zero_POLES:
+
+            self.GraphWidget.canvas.axes.spines['top'].set_color('none')
+            self.GraphWidget.canvas.axes.spines['bottom'].set_position('zero')
+            self.GraphWidget.canvas.axes.spines['left'].set_position('zero')
+            self.GraphWidget.canvas.axes.spines['right'].set_color('none')
+            if self.nextGraphicToShow.zerosXValues is not None:
+                for i in range(len(self.nextGraphicToShow.zerosXValues)):
+                    self.GraphWidget.canvas.axes.plot(self.nextGraphicToShow.zerosXValues[i],
+                                                      self.nextGraphicToShow.zerosYValues[i], color='blue',
+                                                      markersize=10, marker='o')
+
+            for j in range(len(self.nextGraphicToShow.xValueArray)):
+                self.GraphWidget.canvas.axes.plot(self.nextGraphicToShow.xValueArray[j],
+                                                  self.nextGraphicToShow.yValueArray[j],
+                                                  color='black', markersize=10, marker='x')
+
+            self.GraphWidget.canvas.axes.set_title(self.nextGraphicToShow.title)
+            self.fix_y_title_position()
+            self.fix_x_title_position()
+            self.GraphWidget.canvas.axes.grid()
+            self.GraphWidget.canvas.draw()
+
+    def fix_x_title_position(self):
+        ticklabelpad = mpl.rcParams['xtick.major.pad']
+        self.GraphWidget.canvas.axes.annotate(self.nextGraphicToShow.xTitle, xy=(1, 0), xytext=(0, -ticklabelpad),
+                                              ha='left', va='top',
+                                              xycoords='axes fraction', textcoords='offset points')
+
+    def fix_y_title_position(self):
+        ticklabelpad = mpl.rcParams['ytick.major.pad']
+        self.GraphWidget.canvas.axes.annotate(self.nextGraphicToShow.yTitle, xy=(0, 1), xytext=(-50, -ticklabelpad),
+                                              ha='left', va='top',
+                                              xycoords='axes fraction', textcoords='offset points', rotation= 90)
 
 
-
-##Clase GraphicProperties
-#Se utiliza para unificar las propiedades de los graficos a mostrar.
-#En el caso de graficos de POLOS y CEROS:
-#                   Utilizar x_value_array para los valores de x de los polos.
-#                   Utilizar y_value_array para los valores de y de los polos.
+##Class GraphicProperties
+# This class is used to unify the properties of the graphs to show.
+# In case you want to display a graph of POLES and ZEROS:
+#                   Use the parameter x_value_array for the x values of the poles.
+#                   Use the parameter y_value_array for the y values of the poles.
+#                   Use the parameter zeros_x_values for the x values of the zeros.
+#                   Use the parameter zeros_y_values for the y values of the zeros
 class GraphicProperties:
-    def __init__(self, title, x_title, y_title, x_value_array, y_value_array, graphic_type, ceros_x_values = None):
+    def __init__(self, title, x_title, y_title, x_value_array, y_value_array, graphic_type, zeros_x_values=None,
+                 zeros_y_values=None):
         self.title = title
         self.xValueArray = x_value_array
         self.yValueArray = y_value_array
         self.graphicType = graphic_type
         self.xTitle = x_title
         self.yTitle = y_title
-        self.cerosXValues = ceros_x_values
+        self.zerosXValues = zeros_x_values
+        self.zerosYValues = zeros_y_values
 
 
 class GraphicTypes(Enum):
     BODE = 0
     LINEAL = 1
-    CERO_POLES = 2
+    zero_POLES = 2
 
 
 if __name__ == "__main__":
     app = QtWidgets.QApplication([])
     a = [10, 20, 30, 40, 75, 95, 120]
     b = [60, -70, 80, 90, 65, 88, 77]
-    c = [10, 50, 80, 99, 120, 180, 222]
-    d = [20, 45, -88, 100, -151, 174, 188]
-    graphic1 = GraphicProperties("Salida 1", "Valores x", "Valores y", a, b, GraphicTypes.LINEAL)
-    graphic2 = GraphicProperties("Salida 2", "Valores x", "Valores y", c, d, GraphicTypes.LINEAL)
+    c = [10, 50, 80, 99, 120, 180, 222, 4000, 84444, 95555, 3333333, 5555555555555]
+    d = [20, 45, -88, 100, -151, 174, 188, 555, 800, 1050, 9999, 400]
+    graphic1 = GraphicProperties("Salida 1", "Valores x", "Valores y", a, b, GraphicTypes.zero_POLES,
+                                 [88, 120, 500], [-50, 50, 0])
+    graphic2 = GraphicProperties("Salida 2", "Valores x", "Valores y", c, d, GraphicTypes.BODE)
 
     graphics = [graphic1, graphic2]
     window = OutputGraphics(graphics)
