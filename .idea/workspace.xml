@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="59df4d25-0958-402e-8b39-127fabf2e79e" name="Default Changelist" comment="no borres gil">
-      <change beforePath="$PROJECT_DIR$/.idea/dictionaries/Pablo.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dictionaries/Pablo.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+    <list default="true" id="59df4d25-0958-402e-8b39-127fabf2e79e" name="Default Changelist" comment="atr">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pruebaspablo.py" beforeDir="false" afterPath="$PROJECT_DIR$/pruebaspablo.py" afterDir="false" />
     </list>
@@ -19,18 +17,23 @@
         <entry file="file://$PROJECT_DIR$/pruebaspablo.py">
           <provider selected="true" editor-type-id="live-pycharm">
             <state>
-              <first_editor relative-caret-position="256">
-                <caret line="265" column="26" lean-forward="true" selection-start-line="265" selection-start-column="26" selection-end-line="265" selection-end-column="26" />
+              <first_editor relative-caret-position="174">
+                <caret line="287" column="39" selection-start-line="287" selection-start-column="39" selection-end-line="287" selection-end-column="39" />
                 <folding>
                   <element signature="e#0#10#0" expanded="true" />
-                  <element signature="e#3624#3810#0" />
-                  <element signature="e#3844#3935#0" />
-                  <element signature="e#3969#4061#0" />
-                  <element signature="e#4263#4325#0" />
-                  <element signature="e#4501#5545#0" />
-                  <element signature="e#5585#5730#0" />
-                  <element signature="e#5766#5911#0" />
-                  <element signature="e#5950#6220#0" />
+                  <element signature="e#1347#3246#0" />
+                  <element signature="e#3338#4169#0" />
+                  <element signature="e#5404#5465#0" />
+                  <element signature="e#5517#6237#0" />
+                  <element signature="e#6277#6422#0" />
+                  <element signature="e#6458#6603#0" />
+                  <element signature="e#6642#6912#0" />
+                  <element signature="e#6966#9716#0" />
+                  <element signature="e#7178#7455#0" />
+                  <element signature="e#7480#7811#0" />
+                  <element signature="e#9237#9308#0" />
+                  <element signature="e#9358#9686#0" />
+                  <element signature="e#9736#10079#0" />
                 </folding>
               </first_editor>
               <second_editor relative-caret-position="-102">
@@ -41,11 +44,21 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/probandofront_ui.py">
+          <provider selected="true" editor-type-id="live-pycharm">
+            <state>
+              <first_editor />
+              <second_editor />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://D:/Program Files/Python/Lib/site-packages/matplotlib/artist.py">
           <provider selected="true" editor-type-id="live-pycharm">
             <state>
-              <first_editor relative-caret-position="179">
-                <caret line="952" selection-start-line="952" selection-end-line="952" />
+              <first_editor relative-caret-position="136">
+                <caret line="41" selection-start-line="41" selection-end-line="41" />
               </first_editor>
               <second_editor relative-caret-position="-119" />
             </state>
@@ -53,11 +66,11 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://D:/Program Files/Python/Lib/site-packages/matplotlib/lines.py">
+        <entry file="file://D:/Program Files/Python/Lib/site-packages/matplotlib/backends/backend_agg.py">
           <provider selected="true" editor-type-id="live-pycharm">
             <state>
-              <first_editor relative-caret-position="179">
-                <caret line="197" selection-start-line="197" selection-end-line="197" />
+              <first_editor relative-caret-position="221">
+                <caret line="390" selection-start-line="390" selection-end-line="390" />
               </first_editor>
               <second_editor relative-caret-position="-119" />
             </state>
@@ -65,28 +78,49 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/graphwidget.py">
+        <entry file="file://D:/Program Files/Python/Lib/site-packages/matplotlib/backends/backend_qt5.py">
           <provider selected="true" editor-type-id="live-pycharm">
             <state>
-              <first_editor relative-caret-position="357">
-                <caret line="21" column="19" selection-start-line="21" selection-start-column="13" selection-end-line="21" selection-end-column="19" />
-                <folding>
-                  <element signature="e#171#199#0" expanded="true" />
-                </folding>
+              <first_editor relative-caret-position="177">
+                <caret line="478" selection-start-line="478" selection-end-line="478" />
               </first_editor>
-              <second_editor />
+              <second_editor relative-caret-position="-119" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://D:/Program Files/Python/Lib/site-packages/PyQt5/uic/Loader/qobjectcreator.py">
+        <entry file="file://D:/Program Files/Python/Lib/contextlib.py">
           <provider selected="true" editor-type-id="live-pycharm">
             <state>
-              <first_editor relative-caret-position="1989">
-                <caret line="119" selection-start-line="119" selection-end-line="119" />
+              <first_editor relative-caret-position="136">
+                <caret line="238" selection-start-line="238" selection-end-line="238" />
               </first_editor>
-              <second_editor />
+              <second_editor relative-caret-position="-119" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://D:/Program Files/Python/Lib/site-packages/matplotlib/figure.py">
+          <provider selected="true" editor-type-id="live-pycharm">
+            <state>
+              <first_editor relative-caret-position="136">
+                <caret line="1683" selection-start-line="1683" selection-end-line="1683" />
+              </first_editor>
+              <second_editor relative-caret-position="-119" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://D:/Program Files/Python/Lib/site-packages/matplotlib/axes/_axes.py">
+          <provider selected="true" editor-type-id="live-pycharm">
+            <state>
+              <first_editor relative-caret-position="279">
+                <caret line="202" selection-start-line="202" selection-end-line="202" />
+              </first_editor>
+              <second_editor relative-caret-position="-119" />
             </state>
           </provider>
         </entry>
@@ -95,8 +129,8 @@
         <entry file="file://D:/Program Files/Python/Lib/site-packages/matplotlib/axes/_base.py">
           <provider selected="true" editor-type-id="live-pycharm">
             <state>
-              <first_editor relative-caret-position="374">
-                <caret line="3138" selection-start-line="3138" selection-end-line="3138" />
+              <first_editor relative-caret-position="136">
+                <caret line="1470" selection-start-line="1470" selection-end-line="1470" />
               </first_editor>
               <second_editor relative-caret-position="-119" />
             </state>
@@ -108,43 +142,9 @@
           <provider selected="true" editor-type-id="live-pycharm">
             <state>
               <first_editor relative-caret-position="136">
-                <caret line="383" selection-start-line="383" selection-end-line="383" />
+                <caret line="276" selection-start-line="276" selection-end-line="276" />
               </first_editor>
               <second_editor relative-caret-position="-119" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://D:/Program Files/Python/Lib/xml/etree/ElementTree.py">
-          <provider selected="true" editor-type-id="live-pycharm">
-            <state>
-              <first_editor relative-caret-position="9979">
-                <caret line="595" column="78" selection-start-line="595" selection-start-column="78" selection-end-line="595" selection-end-column="78" />
-              </first_editor>
-              <second_editor />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/frontend_ui.py">
-          <provider selected="true" editor-type-id="live-pycharm">
-            <state>
-              <first_editor relative-caret-position="374">
-                <caret line="22" column="75" selection-start-line="22" selection-start-column="75" selection-end-line="22" selection-end-column="75" />
-              </first_editor>
-              <second_editor />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/input_ui.py">
-          <provider selected="true" editor-type-id="live-pycharm">
-            <state>
-              <first_editor />
-              <second_editor />
             </state>
           </provider>
         </entry>
@@ -166,11 +166,13 @@
       <find>.properties</find>
       <find>output</find>
       <find>cero</find>
+      <find>BODE</find>
     </findStrings>
     <replaceStrings>
       <replace>.properties</replace>
       <replace>.get_properties()</replace>
       <replace>zero</replace>
+      <replace>BodeModule</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -198,7 +200,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -210,6 +211,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -421,7 +423,21 @@
       <option name="project" value="LOCAL" />
       <updated>1560522059212</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="atr">
+      <created>1560530498757</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1560530498758</updated>
+    </task>
+    <task id="LOCAL-00020" summary="atr">
+      <created>1560530901228</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1560530901228</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -434,11 +450,11 @@
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32956153" />
       <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.4969743" visible="true" weight="0.20509194" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.3550212" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.042432815" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Version Control" order="7" sideWeight="0.49925596" weight="0.291372" />
+      <window_info anchor="bottom" id="Version Control" order="7" sideWeight="0.49925596" weight="0.042432815" />
       <window_info anchor="bottom" id="Terminal" order="8" sideWeight="0.49925596" weight="0.3289689" />
       <window_info anchor="bottom" id="Python Console" order="9" sideWeight="0.49925596" weight="0.3289689" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5030257" side_tool="true" weight="0.39443535" />
@@ -503,28 +519,26 @@
     <MESSAGE value=".uis" />
     <MESSAGE value="update" />
     <MESSAGE value="no borres gil" />
-    <option name="LAST_COMMIT_MESSAGE" value="no borres gil" />
+    <MESSAGE value="atr" />
+    <option name="LAST_COMMIT_MESSAGE" value="atr" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/pruebaspablo.py</url>
-          <line>179</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
     <watches-manager>
       <configuration name="PythonConfigurationType">
         <watch expression="self.graphCounter" language="Python" />
         <watch expression="self.nextGraphicToShow" language="Python" />
         <watch expression="self.GraphWidget.canvas.axes.get_xlim()" language="Python" />
+        <watch expression="self.GraphWidget.canvas.axes" language="Python" />
       </configuration>
     </watches-manager>
   </component>
   <component name="debuggerHistoryManager">
     <expressions id="watch">
+      <expression>
+        <expression-string>self.GraphWidget.canvas.axes</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
       <expression>
         <expression-string>self.GraphWidget.canvas.axes.get_xlim()</expression-string>
         <language-id>Python</language-id>
@@ -597,6 +611,29 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://D:/Program Files/Python/Lib/site-packages/matplotlib/lines.py">
+      <provider selected="true" editor-type-id="live-pycharm">
+        <state>
+          <first_editor relative-caret-position="3026">
+            <caret line="197" selection-start-line="197" selection-end-line="197" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/graphwidget.py">
+      <provider selected="true" editor-type-id="live-pycharm">
+        <state>
+          <first_editor relative-caret-position="289">
+            <caret line="21" column="19" selection-start-line="21" selection-start-column="13" selection-end-line="21" selection-end-column="19" />
+            <folding>
+              <element signature="e#171#199#0" expanded="true" />
+            </folding>
+          </first_editor>
+          <second_editor relative-caret-position="-68" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://D:/Program Files/Python/Lib/site-packages/PyQt5/uic/Loader/qobjectcreator.py">
       <provider selected="true" editor-type-id="live-pycharm">
         <state>
@@ -635,36 +672,23 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://D:/Program Files/Python/Lib/site-packages/matplotlib/lines.py">
+    <entry file="file://D:/Program Files/Python/Lib/site-packages/matplotlib/__init__.py">
       <provider selected="true" editor-type-id="live-pycharm">
         <state>
-          <first_editor relative-caret-position="179">
-            <caret line="197" selection-start-line="197" selection-end-line="197" />
+          <first_editor relative-caret-position="136">
+            <caret line="798" selection-start-line="798" selection-end-line="798" />
           </first_editor>
           <second_editor relative-caret-position="-119" />
         </state>
       </provider>
     </entry>
-    <entry file="file://D:/Program Files/Python/Lib/site-packages/matplotlib/artist.py">
+    <entry file="file://D:/Program Files/Python/Lib/site-packages/matplotlib/axes/_axes.py">
       <provider selected="true" editor-type-id="live-pycharm">
         <state>
-          <first_editor relative-caret-position="179">
-            <caret line="952" selection-start-line="952" selection-end-line="952" />
+          <first_editor relative-caret-position="279">
+            <caret line="202" selection-start-line="202" selection-end-line="202" />
           </first_editor>
           <second_editor relative-caret-position="-119" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/graphwidget.py">
-      <provider selected="true" editor-type-id="live-pycharm">
-        <state>
-          <first_editor relative-caret-position="357">
-            <caret line="21" column="19" selection-start-line="21" selection-start-column="13" selection-end-line="21" selection-end-column="19" />
-            <folding>
-              <element signature="e#171#199#0" expanded="true" />
-            </folding>
-          </first_editor>
-          <second_editor />
         </state>
       </provider>
     </entry>
@@ -672,7 +696,7 @@
       <provider selected="true" editor-type-id="live-pycharm">
         <state>
           <first_editor relative-caret-position="136">
-            <caret line="383" selection-start-line="383" selection-end-line="383" />
+            <caret line="276" selection-start-line="276" selection-end-line="276" />
           </first_editor>
           <second_editor relative-caret-position="-119" />
         </state>
@@ -681,28 +705,91 @@
     <entry file="file://D:/Program Files/Python/Lib/site-packages/matplotlib/axes/_base.py">
       <provider selected="true" editor-type-id="live-pycharm">
         <state>
-          <first_editor relative-caret-position="374">
-            <caret line="3138" selection-start-line="3138" selection-end-line="3138" />
+          <first_editor relative-caret-position="136">
+            <caret line="1470" selection-start-line="1470" selection-end-line="1470" />
           </first_editor>
           <second_editor relative-caret-position="-119" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://D:/Program Files/Python/Lib/site-packages/matplotlib/figure.py">
+      <provider selected="true" editor-type-id="live-pycharm">
+        <state>
+          <first_editor relative-caret-position="136">
+            <caret line="1683" selection-start-line="1683" selection-end-line="1683" />
+          </first_editor>
+          <second_editor relative-caret-position="-119" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://D:/Program Files/Python/Lib/site-packages/matplotlib/artist.py">
+      <provider selected="true" editor-type-id="live-pycharm">
+        <state>
+          <first_editor relative-caret-position="136">
+            <caret line="41" selection-start-line="41" selection-end-line="41" />
+          </first_editor>
+          <second_editor relative-caret-position="-119" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://D:/Program Files/Python/Lib/contextlib.py">
+      <provider selected="true" editor-type-id="live-pycharm">
+        <state>
+          <first_editor relative-caret-position="136">
+            <caret line="238" selection-start-line="238" selection-end-line="238" />
+          </first_editor>
+          <second_editor relative-caret-position="-119" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://D:/Program Files/Python/Lib/site-packages/matplotlib/backends/backend_qt5.py">
+      <provider selected="true" editor-type-id="live-pycharm">
+        <state>
+          <first_editor relative-caret-position="177">
+            <caret line="478" selection-start-line="478" selection-end-line="478" />
+          </first_editor>
+          <second_editor relative-caret-position="-119" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://D:/Program Files/Python/Lib/site-packages/matplotlib/backends/backend_agg.py">
+      <provider selected="true" editor-type-id="live-pycharm">
+        <state>
+          <first_editor relative-caret-position="221">
+            <caret line="390" selection-start-line="390" selection-end-line="390" />
+          </first_editor>
+          <second_editor relative-caret-position="-119" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/probandofront_ui.py">
+      <provider selected="true" editor-type-id="live-pycharm">
+        <state>
+          <first_editor />
+          <second_editor />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/pruebaspablo.py">
       <provider selected="true" editor-type-id="live-pycharm">
         <state>
-          <first_editor relative-caret-position="256">
-            <caret line="265" column="26" lean-forward="true" selection-start-line="265" selection-start-column="26" selection-end-line="265" selection-end-column="26" />
+          <first_editor relative-caret-position="174">
+            <caret line="287" column="39" selection-start-line="287" selection-start-column="39" selection-end-line="287" selection-end-column="39" />
             <folding>
               <element signature="e#0#10#0" expanded="true" />
-              <element signature="e#3624#3810#0" />
-              <element signature="e#3844#3935#0" />
-              <element signature="e#3969#4061#0" />
-              <element signature="e#4263#4325#0" />
-              <element signature="e#4501#5545#0" />
-              <element signature="e#5585#5730#0" />
-              <element signature="e#5766#5911#0" />
-              <element signature="e#5950#6220#0" />
+              <element signature="e#1347#3246#0" />
+              <element signature="e#3338#4169#0" />
+              <element signature="e#5404#5465#0" />
+              <element signature="e#5517#6237#0" />
+              <element signature="e#6277#6422#0" />
+              <element signature="e#6458#6603#0" />
+              <element signature="e#6642#6912#0" />
+              <element signature="e#6966#9716#0" />
+              <element signature="e#7178#7455#0" />
+              <element signature="e#7480#7811#0" />
+              <element signature="e#9237#9308#0" />
+              <element signature="e#9358#9686#0" />
+              <element signature="e#9736#10079#0" />
             </folding>
           </first_editor>
           <second_editor relative-caret-position="-102">
