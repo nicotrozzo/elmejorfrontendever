@@ -164,7 +164,7 @@ class OutputGraphics(QMainWindow):
         self.prevGraphicButton.clicked.connect(self.previous_graph)
         self.nextGraphicButton.clicked.connect(self.next_graph)
         self.fetch_graphics_information()
-        self.graphicateButton.clicked.connect(self.graph_button_action)
+        self.graphButton.clicked.connect(self.graph_button_action)
         self.addToolBar(NavigationToolbar(self.GraphWidget.canvas, self))
 
     def graph_button_action(self):

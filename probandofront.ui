@@ -74,7 +74,7 @@ border-radius: 10px;</string>
      <string>Configurar Salida</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="graphicateButton">
+   <widget class="QPushButton" name="graphButton">
     <property name="geometry">
      <rect>
       <x>10</x>
