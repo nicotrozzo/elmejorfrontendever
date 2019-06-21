@@ -146,9 +146,20 @@ class Out:
         f = [60, -60, 80, -80, 64, 55, 22]
         graphic1 = GraphicProperties("Ceros", "Re", "Im", a, b, GraphicTypes.Zeros)
         graphic2 = GraphicProperties("Polos", "Re", "Im", e, f, GraphicTypes.Poles)
+        graphic3 = GraphicProperties("Output", "x", "y", a, f, GraphicTypes.Output)
+        graphic4 = GraphicProperties("Bode Phase", "x", "y", c, d, GraphicTypes.BodePhase)
+        graphic5 = GraphicProperties("Bode Module", "x", "y", a, b, GraphicTypes.BodeModule)
 
         graphics = [graphic1, graphic2]
-        return graphics
+
+        dict = {
+            "Zeros and Poles Diagram": [graphic1, graphic2],
+            "Output Signal": [graphic3],
+            "Module Bode": [graphic5],
+            "Phaee Bode": [graphic4]
+        }
+
+        return dict
 
 
 class OutputGraphics(QMainWindow):
@@ -177,13 +188,14 @@ class OutputGraphics(QMainWindow):
             self.nextGraphicToShow = None
             self.graphCounter = 0
             self.maxIndex = None
-            self.graphics = Out.return_out()
-            if isinstance(self.graphics, GraphicProperties):
+            self.graphics = list(Out.return_out().values())
+
+            if len(self.graphics) == 1:
                 self.nextGraphicToShow = self.graphics
                 self.prevGraphicButton.hide()
                 self.nextGraphicButton.hide()
 
-            elif isinstance(self.graphics, list):
+            else:
                 self.maxIndex = len(self.graphics) - 1
                 self.prevGraphicButton.show()
                 self.nextGraphicButton.show()
@@ -216,68 +228,74 @@ class OutputGraphics(QMainWindow):
     def update_graph(self):
 
         self.GraphWidget.canvas.axes.clear()
-        self.fix_axes_titles_position()
-        if self.nextGraphicToShow.graphicType == GraphicTypes.Output:
 
-            self.GraphWidget.canvas.axes.plot(self.nextGraphicToShow.xValueArray, self.nextGraphicToShow.yValueArray)
-            self.GraphWidget.canvas.axes.set_title(self.nextGraphicToShow.title)
+
+        for graph in self.nextGraphicToShow:
+            self.__plot_graph__(graph)
+
+    def __plot_graph__(self, graph):
+        self.fix_axes_titles_position(graph)
+        if graph.graphicType == GraphicTypes.Output:
+
+            self.GraphWidget.canvas.axes.plot(graph.xValueArray, graph.yValueArray)
+            self.GraphWidget.canvas.axes.set_title(graph.title)
             self.GraphWidget.canvas.axes.grid()
             self.GraphWidget.canvas.draw()
 
-        elif self.nextGraphicToShow.graphicType == GraphicTypes.BodeModule or \
-                self.nextGraphicToShow.graphicType == GraphicTypes.BodePhase:
+        elif graph.graphicType == GraphicTypes.BodeModule or \
+                graph.graphicType == GraphicTypes.BodePhase:
 
-            self.GraphWidget.canvas.axes.semilogx(self.nextGraphicToShow.xValueArray,
-                                                  self.nextGraphicToShow.yValueArray)
-            self.GraphWidget.canvas.axes.set_title(self.nextGraphicToShow.title)
+            self.GraphWidget.canvas.axes.semilogx(graph.xValueArray,
+                                                  graph.yValueArray)
+            self.GraphWidget.canvas.axes.set_title(graph.title)
             self.GraphWidget.canvas.axes.grid()
             self.GraphWidget.canvas.draw()
 
-        elif self.nextGraphicToShow.graphicType == GraphicTypes.Zeros:
+        elif graph.graphicType == GraphicTypes.Zeros:
 
             self.GraphWidget.canvas.axes.spines['top'].set_color('none')
             self.GraphWidget.canvas.axes.spines['bottom'].set_position('zero')
             self.GraphWidget.canvas.axes.spines['left'].set_position('zero')
             self.GraphWidget.canvas.axes.spines['right'].set_color('none')
 
-            for i in range(len(self.nextGraphicToShow.xValueArray)):
-                self.GraphWidget.canvas.axes.plot(self.nextGraphicToShow.xValueArray[i],
-                                                  self.nextGraphicToShow.yValueArray[i], color='blue',
+            for i in range(len(graph.xValueArray)):
+                self.GraphWidget.canvas.axes.plot(graph.xValueArray[i],
+                                                  graph.yValueArray[i], color='blue',
                                                   markersize=10, marker='o')
 
-            self.GraphWidget.canvas.axes.set_title(self.nextGraphicToShow.title)
+            self.GraphWidget.canvas.axes.set_title(graph.title)
             self.GraphWidget.canvas.axes.grid()
             self.GraphWidget.canvas.draw()
 
-        elif self.nextGraphicToShow.graphicType == GraphicTypes.Poles:
+        elif graph.graphicType == GraphicTypes.Poles:
 
             self.GraphWidget.canvas.axes.spines['top'].set_color('none')
             self.GraphWidget.canvas.axes.spines['bottom'].set_position('zero')
             self.GraphWidget.canvas.axes.spines['left'].set_position('zero')
             self.GraphWidget.canvas.axes.spines['right'].set_color('none')
 
-            for j in range(len(self.nextGraphicToShow.xValueArray)):
-                self.GraphWidget.canvas.axes.plot(self.nextGraphicToShow.xValueArray[j],
-                                                  self.nextGraphicToShow.yValueArray[j],
+            for j in range(len(graph.xValueArray)):
+                self.GraphWidget.canvas.axes.plot(graph.xValueArray[j],
+                                                  graph.yValueArray[j],
                                                   color='black', markersize=10, marker='x')
 
-            self.GraphWidget.canvas.axes.set_title(self.nextGraphicToShow.title)
+            self.GraphWidget.canvas.axes.set_title(graph.title)
             self.GraphWidget.canvas.axes.grid()
             self.GraphWidget.canvas.draw()
 
-    def fix_axes_titles_position(self):
-        self.__fix_y_title_position__()
-        self.__fix_x_title_position__()
+    def fix_axes_titles_position(self, graph):
+        self.__fix_y_title_position__(graph)
+        self.__fix_x_title_position__(graph)
 
-    def __fix_x_title_position__(self):
+    def __fix_x_title_position__(self, graph):
         ticklabelpad = mpl.rcParams['xtick.major.pad']
-        self.GraphWidget.canvas.axes.annotate(self.nextGraphicToShow.xTitle, xy=(1, 0), xytext=(0, -ticklabelpad),
+        self.GraphWidget.canvas.axes.annotate(graph.xTitle, xy=(1, 0), xytext=(0, -ticklabelpad),
                                               ha='left', va='top',
                                               xycoords='axes fraction', textcoords='offset points')
 
-    def __fix_y_title_position__(self):
+    def __fix_y_title_position__(self, graph):
         ticklabelpad = mpl.rcParams['ytick.major.pad']
-        self.GraphWidget.canvas.axes.annotate(self.nextGraphicToShow.yTitle, xy=(0, 1), xytext=(-50, -ticklabelpad),
+        self.GraphWidget.canvas.axes.annotate(graph.yTitle, xy=(0, 1), xytext=(-50, -ticklabelpad),
                                               ha='left', va='top',
                                               xycoords='axes fraction', textcoords='offset points', rotation=90)
 
