@@ -102,7 +102,7 @@ class DataEntry:
         self.propertyTitle.setText(title)
 
 
-# Grupo de un Combo Box y un label (el titulo de la propiedad)
+# Group of a Combo Box and a Label (which shows the title of the Combo Box)
 class DataEntryCombo:
     def __init__(self, combo_box, label):
         self.propertyTitle = label
@@ -162,6 +162,7 @@ class Out:
         return dict
 
 
+# Main class of the output window.
 class OutputGraphics(QMainWindow):
 
     def __init__(self):
@@ -178,11 +179,12 @@ class OutputGraphics(QMainWindow):
         self.graphButton.clicked.connect(self.graph_button_action)
         self.addToolBar(NavigationToolbar(self.GraphWidget.canvas, self))
 
-    def graph_button_action(self):
+    def __graph_button_action__(self):
         self.fetch_graphics_information()
         self.update_graph()
 
-    def fetch_graphics_information(self):
+    # Calls a function that returns the values of the graphics to show.
+    def __fetch_graphics_information__(self):
         if Out.return_out() is not None:
             self.graphics = None
             self.nextGraphicToShow = None
@@ -202,19 +204,20 @@ class OutputGraphics(QMainWindow):
                 self.nextGraphicToShow = self.graphics[0]
                 self.check_counter()
 
-    def previous_graph(self):
+    # Internal usage functions
+    def __previous_graph__(self):
         self.graphCounter -= 1
         self.nextGraphicToShow = self.graphics[self.graphCounter]
         self.check_counter()
         self.update_graph()
 
-    def next_graph(self):
+    def __next_graph__(self):
         self.graphCounter += 1
         self.nextGraphicToShow = self.graphics[self.graphCounter]
         self.check_counter()
         self.update_graph()
 
-    def check_counter(self):
+    def __check_counter__(self):
         if self.graphCounter == 0:
             self.prevGraphicButton.hide()
         else:
@@ -225,10 +228,9 @@ class OutputGraphics(QMainWindow):
         else:
             self.nextGraphicButton.show()
 
-    def update_graph(self):
+    def __update_graph__(self):
 
         self.GraphWidget.canvas.axes.clear()
-
 
         for graph in self.nextGraphicToShow:
             self.__plot_graph__(graph)
@@ -263,7 +265,7 @@ class OutputGraphics(QMainWindow):
                                                   graph.yValueArray[i], color='blue',
                                                   markersize=10, marker='o')
 
-            self.GraphWidget.canvas.axes.set_title(graph.title)
+            self.GraphWidget.canvas.axes.set_title("Ceros y Polos")
             self.GraphWidget.canvas.axes.grid()
             self.GraphWidget.canvas.draw()
 
@@ -279,11 +281,11 @@ class OutputGraphics(QMainWindow):
                                                   graph.yValueArray[j],
                                                   color='black', markersize=10, marker='x')
 
-            self.GraphWidget.canvas.axes.set_title(graph.title)
+            self.GraphWidget.canvas.axes.set_title("Ceros y Polos")
             self.GraphWidget.canvas.axes.grid()
             self.GraphWidget.canvas.draw()
 
-    def fix_axes_titles_position(self, graph):
+    def __fix_axes_titles_position__(self, graph):
         self.__fix_y_title_position__(graph)
         self.__fix_x_title_position__(graph)
 
